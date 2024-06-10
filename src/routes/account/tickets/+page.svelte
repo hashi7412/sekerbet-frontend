@@ -1,7 +1,7 @@
 <script>
-	import Tickets from '$lib/components/account/tickets.svelte';
 	export const ssr = false;
 	export const csr = true;
+	import Tickets from '$lib/components/account/tickets.svelte';
 </script>
 
 <svelte:head>
