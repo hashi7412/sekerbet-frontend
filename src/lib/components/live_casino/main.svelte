@@ -10,7 +10,13 @@
 	let is_dropdown_providers = false;
 	let is_dropdown_order = false;
 
+	let providersDropdown;
+	let mobileProvidersDropdown;
+	let orderDropdown;
+	let mobileOrderDropdown;
+
 	const handleProvidersDropdownFocusLoss = ({ relatedTarget, currentTarget }) => {
+		console.log(relatedTarget, currentTarget);
 		if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
 		is_dropdown_providers = false;
 	};
@@ -44,10 +50,25 @@
 	let search_input_value = '';
 
 	const onSearchInputChange = (e) => {
-		console.log(e);
 		search_input_value = e.target.value;
+	};
+
+	function handleOutsideClick(event) {
+		const target = event.target;
+
+		if (is_dropdown_providers && !providersDropdown.contains(target)) {
+			is_dropdown_providers = false;
+		} else if (is_dropdown_order && !orderDropdown.contains(target)) {
+			is_dropdown_order = false;
+		} else if (is_show_providers_modal && !mobileProvidersDropdown.contains(target)) {
+			is_show_providers_modal = false;
+		} else if (is_show_search_modal & !mobileOrderDropdown.contains(target)) {
+			is_show_search_modal = false;
+		}
 	}
 </script>
+
+<svelte:window on:click={handleOutsideClick} />
 
 <div class="main-content-wrapper_d5326 home-desktop">
 	<Banner></Banner>
@@ -366,14 +387,17 @@
 								style="width: 250px;"
 							/>
 						</div>
-						<div class="menu_9e6b3" on:focusout={handleProvidersDropdownFocusLoss}>
+						<div
+							class="menu_9e6b3"
+							on:focusout={handleProvidersDropdownFocusLoss}
+							bind:this={providersDropdown}
+						>
 							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<!-- svelte-ignore a11y-no-static-element-interactions -->
 							<div
 								class="select_369d8"
 								on:click={() => {
 									is_dropdown_providers = !is_dropdown_providers;
-									is_dropdown_order = false;
 								}}
 							>
 								<div class="select-left_ffb10">
@@ -528,14 +552,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="menu_f3ce3" on:focusout={handleOrderDropdownFocusLoss}>
+						<div
+							class="menu_f3ce3"
+							on:focusout={handleOrderDropdownFocusLoss}
+							bind:this={orderDropdown}
+						>
 							<!-- svelte-ignore a11y-click-events-have-key-events -->
 							<!-- svelte-ignore a11y-no-static-element-interactions -->
 							<div
 								class="select_b1024"
 								on:click={() => {
 									is_dropdown_order = !is_dropdown_order;
-									is_dropdown_providers = false;
 								}}
 							>
 								<div class="select-left_1ab75">
@@ -620,70 +647,6 @@
 					<h1 class="main-title_3d8d4">All providers / all</h1>
 					<div class="livespins-sdk-container_7460c"></div>
 					<div class="games_c82ed" style="overflow: auto;">
-						<div class="games-header_5ce30">
-							<div class="games-title_e6caf">
-								<svg
-									width="20"
-									height="20"
-									viewBox="0 0 20 20"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<g clip-path="url(#clip0_1_4018)">
-										<path
-											d="M4.16345 8.43582L2.20422 13.5535V13.5539C2.68366 15.4295 3.73746 17.0876 5.22922 18.3383L7.68742 17.4357C5.07641 15.1455 3.78768 11.777 4.16345 8.43582Z"
-											fill="#354046"
-										></path>
-										<path
-											d="M1.54094 15.2858L0.0392115 19.207C-0.140278 19.6754 0.327591 20.1386 0.80942 19.9613L3.97761 18.7981C2.91495 17.7881 2.09062 16.5844 1.54094 15.2858Z"
-											fill="#354046"
-										></path>
-										<path
-											d="M8.36353 7.95852L6.13028 5.77155C4.31959 9.77138 5.55747 14.3432 8.97379 16.9634L11.3574 16.0881C9.26401 13.971 8.13175 11.016 8.36353 7.95852Z"
-											fill="#354046"
-										></path>
-										<path
-											d="M9.53186 9.1026C9.6236 11.5888 10.7293 13.9382 12.5999 15.6315H12.6003L14.3474 14.9901C14.7554 14.8401 14.8671 14.3273 14.5604 14.0269L9.53186 9.1026Z"
-											fill="#354046"
-										></path>
-										<path
-											d="M13.9017 10.9433C14.1353 11.1721 14.5141 11.1721 14.7478 10.9433C16.9987 8.73906 19.1904 9.42054 19.2123 9.42765C19.5258 9.52995 19.8646 9.36406 19.9691 9.05709C20.0737 8.75019 19.9042 8.4183 19.5907 8.31596C19.4727 8.27749 16.6697 7.40403 13.9017 10.1147C13.668 10.3435 13.668 10.7145 13.9017 10.9433Z"
-											fill="#354046"
-										></path>
-										<path
-											d="M10.0942 6.38597C12.8623 3.67559 11.97 0.930445 11.9309 0.814827C11.8264 0.507814 11.4874 0.342199 11.1739 0.444537C10.8608 0.546874 10.6913 0.878495 10.7958 1.18551C10.8029 1.20699 11.499 3.35334 9.24777 5.5575C9.01559 5.78487 9.01324 6.15559 9.24777 6.38597C9.48266 6.61596 9.86115 6.61416 10.0942 6.38597Z"
-											fill="#354046"
-										></path>
-										<path
-											d="M11.3634 7.62897C11.1297 7.85778 11.1297 8.22873 11.3634 8.45755C11.5949 8.68429 11.971 8.68726 12.2059 8.46102C12.515 8.31021 13.4743 8.87588 14.0075 8.35396C14.5349 7.83743 13.9746 6.91706 14.1145 6.5945C14.4443 6.45708 15.3838 7.00611 15.9113 6.48966C16.4388 5.97313 15.8784 5.05276 16.0183 4.73016C16.3486 4.59271 17.2876 5.14181 17.815 4.62532C18.3426 4.10879 17.7822 3.18842 17.9221 2.86582C18.2505 2.72907 19.1918 3.27693 19.7189 2.76094C20.2518 2.23898 19.6753 1.29783 19.8281 0.996716C20.0583 0.767668 20.0571 0.399292 19.8246 0.171611C19.591 -0.0572035 19.2121 -0.0572035 18.9785 0.171611C18.5069 0.633418 18.5992 1.28537 18.688 1.75147C18.212 1.66449 17.5463 1.57414 17.0747 2.03591C16.6032 2.49772 16.6954 3.14967 16.7842 3.61577C16.3083 3.52883 15.6425 3.4384 15.171 3.90025C14.6994 4.36206 14.7917 5.01401 14.8805 5.48011C14.4045 5.39313 13.7388 5.30274 13.2672 5.76455C12.7956 6.22636 12.8879 6.87831 12.9767 7.34441C12.5007 7.2575 11.8349 7.16716 11.3634 7.62897Z"
-											fill="#354046"
-										></path>
-										<path
-											d="M14.7478 2.65739C14.9815 2.42857 14.9815 2.05762 14.7478 1.82881C14.5141 1.59999 14.1353 1.59999 13.9017 1.82881C13.668 2.05762 13.668 2.42857 13.9017 2.65739C14.1353 2.8862 14.5141 2.8862 14.7478 2.65739Z"
-											fill="#354046"
-										></path>
-										<path
-											d="M18.5553 6.97197C18.8858 6.97197 19.1536 6.70966 19.1536 6.38607C19.1536 6.06249 18.8858 5.80017 18.5553 5.80017C18.2249 5.80017 17.957 6.06249 17.957 6.38607C17.957 6.70966 18.2249 6.97197 18.5553 6.97197Z"
-											fill="#354046"
-										></path>
-										<path
-											d="M17.2862 11.7719C17.0525 12.0007 17.0525 12.3717 17.2862 12.6005C17.5199 12.8293 17.8987 12.8293 18.1323 12.6005C18.366 12.3717 18.366 12.0007 18.1323 11.7719C17.8987 11.5431 17.5199 11.5431 17.2862 11.7719Z"
-											fill="#354046"
-										></path>
-										<path
-											d="M8.82494 3.48597C9.0586 3.25716 9.0586 2.8862 8.82494 2.65739C8.59129 2.42858 8.21249 2.42858 7.97883 2.65739C7.74518 2.88616 7.74518 3.25716 7.97883 3.48597C8.21249 3.71479 8.59133 3.71479 8.82494 3.48597Z"
-											fill="#354046"
-										></path>
-									</g>
-									<defs>
-										<clippath id="clip0_1_4018">
-											<rect width="20" height="20" fill="white"></rect>
-										</clippath>
-									</defs>
-								</svg><span>All providers New Games</span>
-							</div>
-							<div class="games-amount_bd3f5">See All (6)</div>
-						</div>
 						<div>
 							<div class="games_2831d">
 								<div class="game_4fadc">
@@ -912,13 +875,6 @@
 						</div>
 					</div>
 					<div class="games_c82ed" style="overflow: auto;">
-						<div class="games-header_5ce30">
-							<div class="games-title_e6caf">
-								<div class="games-icon_56d65"></div>
-								<span>All providers All Games</span>
-							</div>
-							<div class="games-amount_bd3f5">See All (453)</div>
-						</div>
 						<div>
 							<div class="games_2831d">
 								<div class="game_4fadc">
@@ -2130,8 +2086,10 @@
 									fill="currentColor"
 								></path>
 							</g>
-						</svg><span>Support</span></button
-					><button class="btn_ff179 quick-actions_34d25">
+						</svg>
+						<span>Support</span>
+					</button>
+					<button class="btn_ff179 quick-actions_34d25">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="20"
@@ -2152,7 +2110,9 @@
 								d="M17.0261 16.1812C16.7079 16.4525 16.3086 16.6001 15.8983 16.6001H3.55396V18.4001C3.55396 18.7318 3.81604 19.0001 4.13992 19.0001H19.414C19.7379 19.0001 20 18.7318 20 18.4001V11.6743C18.8703 14.5123 17.2938 15.9518 17.0261 16.1812Z"
 								fill="currentColor"
 							></path>
-						</svg><span>Quick Actions</span><svg
+						</svg>
+						<span>Quick Actions</span>
+						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="10"
 							height="6"
@@ -2164,8 +2124,9 @@
 								d="M8.62633 -1.50828e-06L5 3.41372L1.37367 -2.40181e-07L2.26099e-07 1.29314L5 6L10 1.29314L8.62633 -1.50828e-06Z"
 								fill="currentColor"
 							></path>
-						</svg></button
-					><button class="btn_ff179 btn-notification_b107b">
+						</svg>
+					</button>
+					<button class="btn_ff179 btn-notification_b107b">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="20"
@@ -2185,8 +2146,8 @@
 								d="M18.9999 4.16672C18.9999 6.4679 17.1353 8.33328 14.8348 8.33328C12.5346 8.33328 10.6699 6.4679 10.6699 4.16672C10.6699 1.86554 12.5346 0 14.8348 0C17.1353 0 18.9999 1.86554 18.9999 4.16672Z"
 								fill="#F0B905"
 							></path>
-						</svg></button
-					>
+						</svg>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -2468,41 +2429,6 @@
 				</div>
 			</div>
 			<div class="games-container_1ed74">
-				<div class="games-header_11a0f">
-					<div class="df aic" style="display: flex; align-items: center;">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							viewBox="0 0 20 20"
-							fill="none"
-							class="games-block-icon_05731"
-						>
-							<g clip-path="url(#clip0_301_12615)">
-								<path
-									d="M14.5937 3.27398C14.5151 3.03715 14.3063 2.86441 14.0555 2.82867L11.6679 2.48812L10.5998 0.364609C10.4878 0.141406 10.2561 0 10.0022 0C9.74825 0 9.51647 0.141406 9.40451 0.364609L8.33637 2.48816L5.94838 2.82871C5.6975 2.86449 5.48873 3.03719 5.4102 3.27402C5.33166 3.51086 5.39718 3.7709 5.57905 3.94469L7.30736 5.59758L6.89898 7.93133C6.85599 8.17688 6.95888 8.425 7.16419 8.57133C7.36994 8.71828 7.64207 8.73637 7.86645 8.62117L10.0023 7.51926L12.1378 8.62117C12.3673 8.73934 12.6384 8.71496 12.84 8.57133C13.0453 8.42504 13.1482 8.17691 13.1052 7.93156L12.6972 5.59758L14.4251 3.94469C14.6067 3.7709 14.6718 3.51082 14.5937 3.27398Z"
-									fill="currentColor"
-								></path>
-								<path
-									d="M12.6666 9.96814H7.3333C6.96511 9.96814 6.66663 10.2611 6.66663 10.6224V20H13.3333V10.6224C13.3333 10.2611 13.0348 9.96814 12.6666 9.96814Z"
-									fill="currentColor"
-								></path>
-								<path
-									d="M0.666673 12.5852C0.298488 12.5852 0 12.8781 0 13.2395V19.4828C0 19.7685 0.235997 20 0.527081 20H5.33335V12.5852H0.666673Z"
-									fill="currentColor"
-								></path>
-								<path
-									d="M19.3333 15.2021H14.6666V20H19.4729C19.764 20 20 19.7684 20 19.4827V15.8564C19.9999 15.4951 19.7014 15.2021 19.3333 15.2021Z"
-									fill="currentColor"
-								></path>
-							</g>
-						</svg>
-						<h2 class="games-title_37229">All providers Popular Games</h2>
-					</div>
-					<div class="games-amount_4d3c2">
-						<a href="/live_casino/tabs/casino_popular">See All <span>(19)</span></a>
-					</div>
-				</div>
 				<div class="games-rows_3393c">
 					<div class="slider_d1ae8">
 						<div class="game_2ca6b slide_4516b">
@@ -3451,130 +3377,136 @@
 		</div>
 	</div>
 	<div class="menu_98535">
-		<button
-			aria-label="provider_filter"
-			class="item_7d6f0 button_0126b"
-			on:click={toggleProvidersModal}
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="16"
-				height="16"
-				viewBox="0 0 16 16"
-				fill="none"
-				class="icon_f3529"
+		<div style="flex-grow: 2; flex-basis: 0;">
+			<button
+				aria-label="provider_filter"
+				class="item_7d6f0 button_0126b"
+				on:click={toggleProvidersModal}
 			>
-				<circle cx="3" cy="3" r="3" fill="#FEF5D7"></circle>
-				<circle cx="3" cy="13" r="3" fill="#FEF5D7"></circle>
-				<circle cx="13" cy="3" r="3" fill="#39D087"></circle>
-				<circle cx="13" cy="13" r="3" fill="#FEF5D7"></circle>
-			</svg>
-			Provider
-		</button>
-		<div class="providers-filter_44200" style={is_show_providers_modal ? null : 'display: none;'}>
-			<a href="/en/live_casino/" class="item_74988">
-				<div class=""><div class="item-icon_e1129 provider-icon_c6f47 all_46362"></div></div>
-				<div class="item-title_f8093">All</div>
-				<span class="count_5355f">456</span>
-			</a>
-			<a href="/en/live_casino/ezugi_evolution/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 ezugi_evolution_72512"></div>
-				</div>
-				<div class="item-title_f8093">Evolution</div>
-				<span class="count_5355f">100</span>
-			</a>
-			<a href="/en/live_casino/pragmatic_play_casino/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 pragmatic_play_casino_31da3"></div>
-				</div>
-				<div class="item-title_f8093">Pragmatic Play</div>
-				<span class="count_5355f">111</span>
-			</a>
-			<a href="/en/live_casino/ezugi/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 ezugi_39183"></div>
-				</div>
-				<div class="item-title_f8093">Ezugi</div>
-				<span class="count_5355f">30</span></a
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					class="icon_f3529"
+				>
+					<circle cx="3" cy="3" r="3" fill="#FEF5D7"></circle>
+					<circle cx="3" cy="13" r="3" fill="#FEF5D7"></circle>
+					<circle cx="13" cy="3" r="3" fill="#39D087"></circle>
+					<circle cx="13" cy="13" r="3" fill="#FEF5D7"></circle>
+				</svg>
+				Provider
+			</button>
+			<div
+				class="providers-filter_44200"
+				style={is_show_providers_modal ? null : 'display: none;'}
+				bind:this={mobileProvidersDropdown}
 			>
-			<a href="/en/live_casino/bgaming_casino/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 bgaming_casino_d9483"></div>
-				</div>
-				<div class="item-title_f8093">Bgaming Casino</div>
-				<span class="count_5355f">21</span>
-			</a>
-			<a href="/en/live_casino/onetouch_casino/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 onetouch_casino_4fb21"></div>
-				</div>
-				<div class="item-title_f8093">OneTouch Casino</div>
-				<span class="count_5355f">48</span>
-			</a>
-			<a href="/en/live_casino/evoplay_casino/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 evoplay_casino_19280"></div>
-				</div>
-				<div class="item-title_f8093">Evoplay Casino</div>
-				<span class="count_5355f">11</span>
-			</a>
-			<a href="/en/live_casino/playtech_casino/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 playtech_casino_82a15"></div>
-				</div>
-				<div class="item-title_f8093">Playtech Casino</div>
-				<span class="count_5355f">41</span>
-			</a>
-			<a href="/en/live_casino/egt_casino/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 egt_casino_f8aa1"></div>
-				</div>
-				<div class="item-title_f8093">Amusnet (EGT)</div>
-				<span class="count_5355f">7</span>
-			</a>
-			<a href="/en/live_casino/lucky_streak/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 lucky_streak_f8acf"></div>
-				</div>
-				<div class="item-title_f8093">Lucky Streak</div>
-				<span class="count_5355f">15</span>
-			</a>
-			<a href="/en/live_casino/vivo_casino/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 vivo_casino_1c5cf"></div>
-				</div>
-				<div class="item-title_f8093">Vivo</div>
-				<span class="count_5355f">21</span>
-			</a>
-			<a href="/en/live_casino/alg_net/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 alg_net_2ae3b"></div>
-				</div>
-				<div class="item-title_f8093">Absolute Gaming</div>
-				<span class="count_5355f">15</span>
-			</a>
-			<a href="/en/live_casino/the_ear_liveg24/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 the_ear_liveg24_da339"></div>
-				</div>
-				<div class="item-title_f8093">Liveg24</div>
-				<span class="count_5355f">8</span>
-			</a>
-			<a href="/en/live_casino/smartsoft_casino/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 smartsoft_casino_a7857"></div>
-				</div>
-				<div class="item-title_f8093">Smartsoft Casino</div>
-				<span class="count_5355f">18</span>
-			</a>
-			<a href="/en/live_casino/betgames/" class="item_74988">
-				<div class="">
-					<div class="item-icon_e1129 provider-icon_c6f47 betgames_7192b"></div>
-				</div>
-				<div class="item-title_f8093">Bet Games</div>
-				<span class="count_5355f">10</span>
-			</a>
+				<a href="/en/live_casino/" class="item_74988">
+					<div class=""><div class="item-icon_e1129 provider-icon_c6f47 all_46362"></div></div>
+					<div class="item-title_f8093">All</div>
+					<span class="count_5355f">456</span>
+				</a>
+				<a href="/en/live_casino/ezugi_evolution/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 ezugi_evolution_72512"></div>
+					</div>
+					<div class="item-title_f8093">Evolution</div>
+					<span class="count_5355f">100</span>
+				</a>
+				<a href="/en/live_casino/pragmatic_play_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 pragmatic_play_casino_31da3"></div>
+					</div>
+					<div class="item-title_f8093">Pragmatic Play</div>
+					<span class="count_5355f">111</span>
+				</a>
+				<a href="/en/live_casino/ezugi/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 ezugi_39183"></div>
+					</div>
+					<div class="item-title_f8093">Ezugi</div>
+					<span class="count_5355f">30</span></a
+				>
+				<a href="/en/live_casino/bgaming_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 bgaming_casino_d9483"></div>
+					</div>
+					<div class="item-title_f8093">Bgaming Casino</div>
+					<span class="count_5355f">21</span>
+				</a>
+				<a href="/en/live_casino/onetouch_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 onetouch_casino_4fb21"></div>
+					</div>
+					<div class="item-title_f8093">OneTouch Casino</div>
+					<span class="count_5355f">48</span>
+				</a>
+				<a href="/en/live_casino/evoplay_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 evoplay_casino_19280"></div>
+					</div>
+					<div class="item-title_f8093">Evoplay Casino</div>
+					<span class="count_5355f">11</span>
+				</a>
+				<a href="/en/live_casino/playtech_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 playtech_casino_82a15"></div>
+					</div>
+					<div class="item-title_f8093">Playtech Casino</div>
+					<span class="count_5355f">41</span>
+				</a>
+				<a href="/en/live_casino/egt_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 egt_casino_f8aa1"></div>
+					</div>
+					<div class="item-title_f8093">Amusnet (EGT)</div>
+					<span class="count_5355f">7</span>
+				</a>
+				<a href="/en/live_casino/lucky_streak/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 lucky_streak_f8acf"></div>
+					</div>
+					<div class="item-title_f8093">Lucky Streak</div>
+					<span class="count_5355f">15</span>
+				</a>
+				<a href="/en/live_casino/vivo_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 vivo_casino_1c5cf"></div>
+					</div>
+					<div class="item-title_f8093">Vivo</div>
+					<span class="count_5355f">21</span>
+				</a>
+				<a href="/en/live_casino/alg_net/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 alg_net_2ae3b"></div>
+					</div>
+					<div class="item-title_f8093">Absolute Gaming</div>
+					<span class="count_5355f">15</span>
+				</a>
+				<a href="/en/live_casino/the_ear_liveg24/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 the_ear_liveg24_da339"></div>
+					</div>
+					<div class="item-title_f8093">Liveg24</div>
+					<span class="count_5355f">8</span>
+				</a>
+				<a href="/en/live_casino/smartsoft_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 smartsoft_casino_a7857"></div>
+					</div>
+					<div class="item-title_f8093">Smartsoft Casino</div>
+					<span class="count_5355f">18</span>
+				</a>
+				<a href="/en/live_casino/betgames/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 betgames_7192b"></div>
+					</div>
+					<div class="item-title_f8093">Bet Games</div>
+					<span class="count_5355f">10</span>
+				</a>
+			</div>
 		</div>
 		<button aria-label="search_games" class="item_7d6f0 button_0126b" on:click={toggleSearchModal}>
 			<svg
@@ -3599,7 +3531,11 @@
 			</svg>
 			Search for game
 		</button>
-		<div class="game-search_1654c" style={is_show_search_modal ? null : 'display: none;'}>
+		<div
+			class="game-search_1654c"
+			style={is_show_search_modal ? null : 'display: none;'}
+			bind:this={mobileOrderDropdown}
+		>
 			<div class="title_a7416">Game Search</div>
 			<div class="description_9bdb1">Discover Great Games</div>
 			<div class="games-wrapper_3b4e0">
@@ -3640,7 +3576,12 @@
 					</div>
 				</div>
 			</div>
-			<input on:change={onSearchInputChange} class="input_02cdd" type="text" placeholder="Oyun Ara" />
+			<input
+				on:change={onSearchInputChange}
+				class="input_02cdd"
+				type="text"
+				placeholder="Oyun Ara"
+			/>
 		</div>
 		<div class="center-block_5ed43">
 			<!-- svelte-ignore a11y-missing-attribute -->

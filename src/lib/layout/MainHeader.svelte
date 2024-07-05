@@ -306,14 +306,10 @@
 									class={currentUrl === '/sports'
 										? 'nav-menu-item_cc30f active_90a45'
 										: 'nav-menu-item_cc30f'}
+									on:mouseenter={() => (sports_modal_show = true)}
+									on:mouseleave={() => (sports_modal_show = false)}
 								>
-									<a
-										href="/sports"
-										id="PRE_LIVE"
-										class="nav-menu-link_d5e39"
-										on:mouseenter={() => (sports_modal_show = true)}
-										on:mouseleave={() => (sports_modal_show = false)}
-									>
+									<a href="/sports" id="PRE_LIVE" class="nav-menu-link_d5e39">
 										<span class="nav-menu-link-icon_8393e">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
@@ -336,463 +332,443 @@
 											</svg>
 										</span>
 										<span class="nav-menu-link-title_42160">Sports</span>
-										<div
-											class="popup-by-link_f48f3"
-											style={sports_modal_show ? 'display: block' : 'display: none'}
-										>
-											<div class="popup-content_419fb">
-												<!-- svelte-ignore a11y-no-static-element-interactions -->
-												<!-- svelte-ignore a11y-click-events-have-key-events -->
-												<div
-													class="close-icon-container_7d498"
-													on:click={() => (sports_modal_show = false)}
+									</a>
+									<div
+										class="popup-by-link_f48f3"
+										style={sports_modal_show ? 'display: block' : 'display: none'}
+									>
+										<div class="popup-content_419fb">
+											<!-- svelte-ignore a11y-no-static-element-interactions -->
+											<!-- svelte-ignore a11y-click-events-have-key-events -->
+											<div
+												class="close-icon-container_7d498"
+												on:click={() => (sports_modal_show = false)}
+											>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="8"
+													height="8"
+													viewBox="0 0 8 8"
+													fill="none"
+													class="close-icon_bbe65"
 												>
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="8"
-														height="8"
-														viewBox="0 0 8 8"
-														fill="none"
-														class="close-icon_bbe65"
-													>
-														<g clip-path="url(#clip0_34_19925)">
-															<path
-																d="M5.3158 4.03742C5.29518 4.01679 5.29518 3.98321 5.3158 3.96258L7.83428 1.44287C8.04963 1.22743 8.04963 0.876877 7.83428 0.66143L7.335 0.16191C7.23065 0.0574891 7.0919 0 6.94431 0C6.79672 0 6.65796 0.0574891 6.5536 0.161894L4.03512 2.68164C4.02238 2.69438 4.00784 2.69707 3.9979 2.69707C3.98797 2.69707 3.97343 2.6944 3.96069 2.68164L1.44219 0.161894C1.33783 0.0574891 1.19908 0 1.05148 0C0.903876 0 0.765143 0.0574891 0.660785 0.161894L0.161515 0.66143C-0.0538385 0.876877 -0.0538385 1.22743 0.161515 1.44287L2.68 3.96258C2.70061 3.98321 2.70061 4.01679 2.68 4.03742L0.161515 6.55713C-0.0538229 6.77258 -0.0538229 7.12312 0.161515 7.33857L0.660785 7.83809C0.765143 7.94249 0.903892 7.99998 1.05148 7.99998C1.19907 7.99998 1.33783 7.94249 1.44219 7.83809L3.96067 5.31838C3.97341 5.30562 3.98794 5.30295 3.99789 5.30295C4.00784 5.30295 4.02235 5.30562 4.0351 5.31839L6.55358 7.83811C6.65794 7.94251 6.79669 8 6.94429 8C7.0919 8 7.23063 7.94251 7.33499 7.83811L7.83426 7.33859C8.0496 7.12315 8.0496 6.7726 7.83426 6.55715L5.3158 4.03742Z"
-																fill="currentColor"
-															></path>
-														</g>
-													</svg>
-												</div>
-												<div class="first-column_1a5b6">
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="32"
-														height="32"
-														viewBox="0 0 32 32"
-														class="icon_2481e"
-													>
+													<g clip-path="url(#clip0_34_19925)">
 														<path
-															d="M16.0004 0C7.1632 0 1.43742e-07 7.16281 1.43742e-07 16C-0.00117173 24.836 7.1632 31.9988 16.0004 32C24.8372 32 32.0016 24.8372 32 15.9988C32.0016 7.16156 24.8356 0 16.0004 0ZM26.8412 23.742L24.5995 22.112L19.1571 26.0664L20.0171 28.7136C18.7491 29.1144 17.3999 29.3332 15.9995 29.3332C14.5995 29.3332 13.2516 29.1144 11.9835 28.7148L12.8439 26.0663L7.4 22.112L5.15922 23.7409C3.61602 21.5845 2.69523 18.9556 2.67203 16.108L5.45086 16.1064L7.52883 9.70961L5.28922 8.08203C6.90125 5.90359 9.15562 4.23445 11.7788 3.35922L12.6372 6H19.3624L20.2204 3.35922C22.8452 4.23563 25.0988 5.90484 26.7108 8.08203L24.4708 9.70961L26.5488 16.1064H29.3291C29.306 18.956 28.3848 21.5848 26.8412 23.742Z"
-															fill="#AEBBC2"
+															d="M5.3158 4.03742C5.29518 4.01679 5.29518 3.98321 5.3158 3.96258L7.83428 1.44287C8.04963 1.22743 8.04963 0.876877 7.83428 0.66143L7.335 0.16191C7.23065 0.0574891 7.0919 0 6.94431 0C6.79672 0 6.65796 0.0574891 6.5536 0.161894L4.03512 2.68164C4.02238 2.69438 4.00784 2.69707 3.9979 2.69707C3.98797 2.69707 3.97343 2.6944 3.96069 2.68164L1.44219 0.161894C1.33783 0.0574891 1.19908 0 1.05148 0C0.903876 0 0.765143 0.0574891 0.660785 0.161894L0.161515 0.66143C-0.0538385 0.876877 -0.0538385 1.22743 0.161515 1.44287L2.68 3.96258C2.70061 3.98321 2.70061 4.01679 2.68 4.03742L0.161515 6.55713C-0.0538229 6.77258 -0.0538229 7.12312 0.161515 7.33857L0.660785 7.83809C0.765143 7.94249 0.903892 7.99998 1.05148 7.99998C1.19907 7.99998 1.33783 7.94249 1.44219 7.83809L3.96067 5.31838C3.97341 5.30562 3.98794 5.30295 3.99789 5.30295C4.00784 5.30295 4.02235 5.30562 4.0351 5.31839L6.55358 7.83811C6.65794 7.94251 6.79669 8 6.94429 8C7.0919 8 7.23063 7.94251 7.33499 7.83811L7.83426 7.33859C8.0496 7.12315 8.0496 6.7726 7.83426 6.55715L5.3158 4.03742Z"
+															fill="currentColor"
 														></path>
-														<path
-															d="M19.3419 11.4014H12.6139L10.5371 17.7982L15.9787 21.7514L21.4203 17.7982L19.3419 11.4014Z"
-															fill="#FBCF44"
-														></path>
-													</svg>
-													<div class="title_11523">Bet</div>
-													<div class="subtitle_5e9ff">
-														Bet on thousands of matches in dozens of different sports with sports
-														betting.
-													</div>
-													<ul class="first-column-links-list_d3603">
-														<li class="first-column-link-item_aa6b6">Approaching</li>
-														<li class="first-column-link-item_aa6b6">Highlights</li>
-														<li class="first-column-link-item_aa6b6">my favorites</li>
-														<li class="first-column-link-item_aa6b6">Match results</li>
-													</ul>
-													<button class="first-column-btn_d8a4c"> Play </button>
+													</g>
+												</svg>
+											</div>
+											<div class="first-column_1a5b6">
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="32"
+													height="32"
+													viewBox="0 0 32 32"
+													class="icon_2481e"
+												>
+													<path
+														d="M16.0004 0C7.1632 0 1.43742e-07 7.16281 1.43742e-07 16C-0.00117173 24.836 7.1632 31.9988 16.0004 32C24.8372 32 32.0016 24.8372 32 15.9988C32.0016 7.16156 24.8356 0 16.0004 0ZM26.8412 23.742L24.5995 22.112L19.1571 26.0664L20.0171 28.7136C18.7491 29.1144 17.3999 29.3332 15.9995 29.3332C14.5995 29.3332 13.2516 29.1144 11.9835 28.7148L12.8439 26.0663L7.4 22.112L5.15922 23.7409C3.61602 21.5845 2.69523 18.9556 2.67203 16.108L5.45086 16.1064L7.52883 9.70961L5.28922 8.08203C6.90125 5.90359 9.15562 4.23445 11.7788 3.35922L12.6372 6H19.3624L20.2204 3.35922C22.8452 4.23563 25.0988 5.90484 26.7108 8.08203L24.4708 9.70961L26.5488 16.1064H29.3291C29.306 18.956 28.3848 21.5848 26.8412 23.742Z"
+														fill="#AEBBC2"
+													></path>
+													<path
+														d="M19.3419 11.4014H12.6139L10.5371 17.7982L15.9787 21.7514L21.4203 17.7982L19.3419 11.4014Z"
+														fill="#FBCF44"
+													></path>
+												</svg>
+												<div class="title_11523">Bet</div>
+												<div class="subtitle_5e9ff">
+													Bet on thousands of matches in dozens of different sports with sports
+													betting.
 												</div>
-												<div class="column_bb693">
-													<div class="column-title_5f3c2">Important Matches of the Day</div>
-													<div class="events-container_cd6d0">
-														<div class="event_27022">
-															<div class="event-top_b6ba8">
-																<div>
-																	<div class="event-title_2f940">Germany - Scotland</div>
-																	<div class="event-subtitle_4e75c">
-																		Football<span class="dot_13469"></span>
+												<ul class="first-column-links-list_d3603">
+													<li class="first-column-link-item_aa6b6">Approaching</li>
+													<li class="first-column-link-item_aa6b6">Highlights</li>
+													<li class="first-column-link-item_aa6b6">my favorites</li>
+													<li class="first-column-link-item_aa6b6">Match results</li>
+												</ul>
+												<button class="first-column-btn_d8a4c"> Play </button>
+											</div>
+											<div class="column_bb693">
+												<div class="column-title_5f3c2">Important Matches of the Day</div>
+												<div class="events-container_cd6d0">
+													<div class="event_27022">
+														<div class="event-top_b6ba8">
+															<div>
+																<div class="event-title_2f940">Germany - Scotland</div>
+																<div class="event-subtitle_4e75c">
+																	Football<span class="dot_13469"></span>
 
-																		International <span class="dot_13469"></span>
+																	International <span class="dot_13469"></span>
 
-																		European cup
-																	</div>
-																</div>
-																<div>
-																	<span class="db time-container_a18e8">
-																		<div class="event-time_eebcf">22:00</div>
-																		<div class="event-date_cb2c9"><span></span></div>
-																		<div class="event-date_cb2c9"></div>
-																	</span>
+																	European cup
 																</div>
 															</div>
-															<div class="outcome-column_f05b5">
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> one </span><span>
-																			1.25
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> X </span><span>
-																			6.05
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> 2 </span><span>
-																			12.75
-																		</span></button
-																	>
-																</div>
+															<div>
+																<span class="db time-container_a18e8">
+																	<div class="event-time_eebcf">22:00</div>
+																	<div class="event-date_cb2c9"><span></span></div>
+																	<div class="event-date_cb2c9"></div>
+																</span>
 															</div>
 														</div>
-														<div class="event_27022">
-															<div class="event-top_b6ba8">
-																<div>
-																	<div class="event-title_2f940">Hungary - Switzerland</div>
-																	<div class="event-subtitle_4e75c">
-																		Football<span class="dot_13469"></span>
-
-																		International <span class="dot_13469"></span>
-
-																		European cup
-																	</div>
-																</div>
-																<div>
-																	<span class="db time-container_a18e8">
-																		<div class="event-time_eebcf">16:00</div>
-																		<div class="event-date_cb2c9"><span></span></div>
-																		<div class="event-date_cb2c9"></div>
-																	</span>
-																</div>
+														<div class="outcome-column_f05b5">
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> one </span><span>
+																		1.25
+																	</span></button
+																>
 															</div>
-															<div class="outcome-column_f05b5">
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> one </span><span>
-																			3.30
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> X </span><span>
-																			3.50
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> 2 </span><span>
-																			2.20
-																		</span></button
-																	>
-																</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> X </span><span> 6.05 </span></button
+																>
 															</div>
-														</div>
-														<div class="event_27022">
-															<div class="event-top_b6ba8">
-																<div>
-																	<div class="event-title_2f940">Spain - Croatia</div>
-																	<div class="event-subtitle_4e75c">
-																		Football<span class="dot_13469"></span>
-
-																		International <span class="dot_13469"></span>
-
-																		European cup
-																	</div>
-																</div>
-																<div>
-																	<span class="db time-container_a18e8">
-																		<div class="event-time_eebcf">19:00</div>
-																		<div class="event-date_cb2c9"><span></span></div>
-																		<div class="event-date_cb2c9"></div>
-																	</span>
-																</div>
-															</div>
-															<div class="outcome-column_f05b5">
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> one </span><span>
-																			1.73
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> X </span><span>
-																			3.85
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> 2 </span><span>
-																			4.90
-																		</span></button
-																	>
-																</div>
-															</div>
-														</div>
-														<div class="event_27022">
-															<div class="event-top_b6ba8">
-																<div>
-																	<div class="event-title_2f940">Italy - Albania</div>
-																	<div class="event-subtitle_4e75c">
-																		Football<span class="dot_13469"></span>
-
-																		International <span class="dot_13469"></span>
-
-																		European cup
-																	</div>
-																</div>
-																<div>
-																	<span class="db time-container_a18e8">
-																		<div class="event-time_eebcf">22:00</div>
-																		<div class="event-date_cb2c9"><span></span></div>
-																		<div class="event-date_cb2c9"></div>
-																	</span>
-																</div>
-															</div>
-															<div class="outcome-column_f05b5">
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> one </span><span>
-																			1.38
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> X </span><span>
-																			4.70
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> 2 </span><span>
-																			9.40
-																		</span></button
-																	>
-																</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> 2 </span><span> 12.75 </span></button
+																>
 															</div>
 														</div>
 													</div>
-												</div>
-												<div class="column_bb693">
-													<div class="column-title_5f3c2">Popular Leagues</div>
-													<div style="text-align: left;">
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={RedStarImg} alt="Super League logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">Super League</h4>
-																	<span class="sport-country_ded94"> Soccer, Turkey </span>
+													<div class="event_27022">
+														<div class="event-top_b6ba8">
+															<div>
+																<div class="event-title_2f940">Hungary - Switzerland</div>
+																<div class="event-subtitle_4e75c">
+																	Football<span class="dot_13469"></span>
+
+																	International <span class="dot_13469"></span>
+
+																	European cup
 																</div>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<span class="db time-container_a18e8">
+																	<div class="event-time_eebcf">16:00</div>
+																	<div class="event-date_cb2c9"><span></span></div>
+																	<div class="event-date_cb2c9"></div>
+																</span>
+															</div>
 														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={LionImg} alt="Premier League logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">Premier League</h4>
-																	<span class="sport-country_ded94"> Soccer, England </span>
-																</div>
+														<div class="outcome-column_f05b5">
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> one </span><span>
+																		3.30
+																	</span></button
+																>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> X </span><span> 3.50 </span></button
+																>
+															</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> 2 </span><span> 2.20 </span></button
+																>
+															</div>
 														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={StarImg} alt="Champions League logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">Champions League</h4>
-																	<span class="sport-country_ded94">
-																		Soccer, International Clubs
-																	</span>
+													</div>
+													<div class="event_27022">
+														<div class="event-top_b6ba8">
+															<div>
+																<div class="event-title_2f940">Spain - Croatia</div>
+																<div class="event-subtitle_4e75c">
+																	Football<span class="dot_13469"></span>
+
+																	International <span class="dot_13469"></span>
+
+																	European cup
 																</div>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<span class="db time-container_a18e8">
+																	<div class="event-time_eebcf">19:00</div>
+																	<div class="event-date_cb2c9"><span></span></div>
+																	<div class="event-date_cb2c9"></div>
+																</span>
+															</div>
 														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={CupImg} alt="UEFA Europa League logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">UEFA Europa League</h4>
-																	<span class="sport-country_ded94">
-																		Soccer, International Clubs
-																	</span>
-																</div>
+														<div class="outcome-column_f05b5">
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> one </span><span>
+																		1.73
+																	</span></button
+																>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> X </span><span> 3.85 </span></button
+																>
+															</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> 2 </span><span> 4.90 </span></button
+																>
+															</div>
 														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={BigCupImg} alt="UEFA Europa Conference League logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">UEFA Europa Conference League</h4>
-																	<span class="sport-country_ded94">
-																		Soccer, International Clubs
-																	</span>
+													</div>
+													<div class="event_27022">
+														<div class="event-top_b6ba8">
+															<div>
+																<div class="event-title_2f940">Italy - Albania</div>
+																<div class="event-subtitle_4e75c">
+																	Football<span class="dot_13469"></span>
+
+																	International <span class="dot_13469"></span>
+
+																	European cup
 																</div>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<span class="db time-container_a18e8">
+																	<div class="event-time_eebcf">22:00</div>
+																	<div class="event-date_cb2c9"><span></span></div>
+																	<div class="event-date_cb2c9"></div>
+																</span>
+															</div>
 														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={SerieaImg} alt="Serie A logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">Serie A</h4>
-																	<span class="sport-country_ded94"> Soccer, Italy </span>
-																</div>
+														<div class="outcome-column_f05b5">
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> one </span><span>
+																		1.38
+																	</span></button
+																>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
-														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={ColorImg} alt="LaLiga logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">LaLiga</h4>
-																	<span class="sport-country_ded94"> Soccer, Spain </span>
-																</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> X </span><span> 4.70 </span></button
+																>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
-														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={KickImg} alt="Bundesliga logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">Bundesliga</h4>
-																	<span class="sport-country_ded94"> Soccer, Germany </span>
-																</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> 2 </span><span> 9.40 </span></button
+																>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
 														</div>
 													</div>
 												</div>
 											</div>
+											<div class="column_bb693">
+												<div class="column-title_5f3c2">Popular Leagues</div>
+												<div style="text-align: left;">
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={RedStarImg} alt="Super League logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">Super League</h4>
+																<span class="sport-country_ded94"> Soccer, Turkey </span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={LionImg} alt="Premier League logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">Premier League</h4>
+																<span class="sport-country_ded94"> Soccer, England </span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={StarImg} alt="Champions League logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">Champions League</h4>
+																<span class="sport-country_ded94">
+																	Soccer, International Clubs
+																</span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={CupImg} alt="UEFA Europa League logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">UEFA Europa League</h4>
+																<span class="sport-country_ded94">
+																	Soccer, International Clubs
+																</span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={BigCupImg} alt="UEFA Europa Conference League logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">UEFA Europa Conference League</h4>
+																<span class="sport-country_ded94">
+																	Soccer, International Clubs
+																</span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={SerieaImg} alt="Serie A logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">Serie A</h4>
+																<span class="sport-country_ded94"> Soccer, Italy </span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={ColorImg} alt="LaLiga logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">LaLiga</h4>
+																<span class="sport-country_ded94"> Soccer, Spain </span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={KickImg} alt="Bundesliga logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">Bundesliga</h4>
+																<span class="sport-country_ded94"> Soccer, Germany </span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+												</div>
+											</div>
 										</div>
-									</a>
+									</div>
 								</li>
 								<li
 									class={currentUrl === '/live'
 										? 'nav-menu-item_cc30f active_90a45'
 										: 'nav-menu-item_cc30f'}
+									on:mouseenter={() => (inplay_modal_show = true)}
+									on:mouseleave={() => (inplay_modal_show = false)}
 								>
-									<a
-										href="/live"
-										id="LIVE"
-										class="nav-menu-link_d5e39"
-										on:mouseenter={() => (inplay_modal_show = true)}
-										on:mouseleave={() => (inplay_modal_show = false)}
-									>
+									<a href="/live" id="LIVE" class="nav-menu-link_d5e39">
 										<span class="nav-menu-link-icon_8393e">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
@@ -815,466 +791,448 @@
 											</svg></span
 										>
 										<span class="nav-menu-link-title_42160">In-Play</span>
-										<div
-											class="popup-by-link_f48f3"
-											style={inplay_modal_show ? 'display: block' : 'display: none'}
-										>
-											<!-- svelte-ignore a11y-no-static-element-interactions -->
-											<!-- svelte-ignore a11y-click-events-have-key-events -->
-											<div class="popup-content_419fb">
-												<div
-													class="close-icon-container_7d498"
-													on:click={() => (inplay_modal_show = false)}
+									</a>
+									<div
+										class="popup-by-link_f48f3"
+										style={inplay_modal_show ? 'display: block' : 'display: none'}
+									>
+										<!-- svelte-ignore a11y-no-static-element-interactions -->
+										<!-- svelte-ignore a11y-click-events-have-key-events -->
+										<div class="popup-content_419fb">
+											<div
+												class="close-icon-container_7d498"
+												on:click={() => (inplay_modal_show = false)}
+											>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="8"
+													height="8"
+													viewBox="0 0 8 8"
+													fill="none"
+													class="close-icon_bbe65"
 												>
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="8"
-														height="8"
-														viewBox="0 0 8 8"
-														fill="none"
-														class="close-icon_bbe65"
-													>
-														<g clip-path="url(#clip0_34_19925)">
-															<path
-																d="M5.3158 4.03742C5.29518 4.01679 5.29518 3.98321 5.3158 3.96258L7.83428 1.44287C8.04963 1.22743 8.04963 0.876877 7.83428 0.66143L7.335 0.16191C7.23065 0.0574891 7.0919 0 6.94431 0C6.79672 0 6.65796 0.0574891 6.5536 0.161894L4.03512 2.68164C4.02238 2.69438 4.00784 2.69707 3.9979 2.69707C3.98797 2.69707 3.97343 2.6944 3.96069 2.68164L1.44219 0.161894C1.33783 0.0574891 1.19908 0 1.05148 0C0.903876 0 0.765143 0.0574891 0.660785 0.161894L0.161515 0.66143C-0.0538385 0.876877 -0.0538385 1.22743 0.161515 1.44287L2.68 3.96258C2.70061 3.98321 2.70061 4.01679 2.68 4.03742L0.161515 6.55713C-0.0538229 6.77258 -0.0538229 7.12312 0.161515 7.33857L0.660785 7.83809C0.765143 7.94249 0.903892 7.99998 1.05148 7.99998C1.19907 7.99998 1.33783 7.94249 1.44219 7.83809L3.96067 5.31838C3.97341 5.30562 3.98794 5.30295 3.99789 5.30295C4.00784 5.30295 4.02235 5.30562 4.0351 5.31839L6.55358 7.83811C6.65794 7.94251 6.79669 8 6.94429 8C7.0919 8 7.23063 7.94251 7.33499 7.83811L7.83426 7.33859C8.0496 7.12315 8.0496 6.7726 7.83426 6.55715L5.3158 4.03742Z"
-																fill="currentColor"
-															></path>
-														</g>
-													</svg>
+													<g clip-path="url(#clip0_34_19925)">
+														<path
+															d="M5.3158 4.03742C5.29518 4.01679 5.29518 3.98321 5.3158 3.96258L7.83428 1.44287C8.04963 1.22743 8.04963 0.876877 7.83428 0.66143L7.335 0.16191C7.23065 0.0574891 7.0919 0 6.94431 0C6.79672 0 6.65796 0.0574891 6.5536 0.161894L4.03512 2.68164C4.02238 2.69438 4.00784 2.69707 3.9979 2.69707C3.98797 2.69707 3.97343 2.6944 3.96069 2.68164L1.44219 0.161894C1.33783 0.0574891 1.19908 0 1.05148 0C0.903876 0 0.765143 0.0574891 0.660785 0.161894L0.161515 0.66143C-0.0538385 0.876877 -0.0538385 1.22743 0.161515 1.44287L2.68 3.96258C2.70061 3.98321 2.70061 4.01679 2.68 4.03742L0.161515 6.55713C-0.0538229 6.77258 -0.0538229 7.12312 0.161515 7.33857L0.660785 7.83809C0.765143 7.94249 0.903892 7.99998 1.05148 7.99998C1.19907 7.99998 1.33783 7.94249 1.44219 7.83809L3.96067 5.31838C3.97341 5.30562 3.98794 5.30295 3.99789 5.30295C4.00784 5.30295 4.02235 5.30562 4.0351 5.31839L6.55358 7.83811C6.65794 7.94251 6.79669 8 6.94429 8C7.0919 8 7.23063 7.94251 7.33499 7.83811L7.83426 7.33859C8.0496 7.12315 8.0496 6.7726 7.83426 6.55715L5.3158 4.03742Z"
+															fill="currentColor"
+														></path>
+													</g>
+												</svg>
+											</div>
+											<div class="first-column_1a5b6">
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="33"
+													height="32"
+													viewBox="0 0 33 32"
+													class="icon_2481e"
+												>
+													<path
+														d="M5.92092 5.34726C7.33101 3.96493 9.22691 3.19064 11.2015 3.19064C13.1762 3.19064 15.0721 3.96493 16.4822 5.34726C16.7889 5.62076 17.1892 5.76573 17.5999 5.75215C18.0107 5.73856 18.4005 5.56745 18.6885 5.27428C18.9765 4.98111 19.1407 4.58836 19.147 4.17742C19.1533 3.76649 19.0013 3.36887 18.7224 3.06699C16.7127 1.10093 14.013 0 11.2015 0C8.39007 0 5.69037 1.10093 3.68066 3.06699C3.40177 3.36887 3.24973 3.76649 3.25605 4.17742C3.26236 4.58836 3.42655 4.98111 3.71458 5.27428C4.0026 5.56745 4.39239 5.73856 4.80315 5.75215C5.21391 5.76573 5.61415 5.62076 5.92092 5.34726Z"
+														fill="#FBCF44"
+													></path>
+													<path
+														d="M7.52067 6.85619C7.35895 7.00037 7.22819 7.17589 7.13632 7.37211C7.04445 7.56833 6.99339 7.78117 6.98623 7.99771C6.97906 8.21426 7.01595 8.43 7.09465 8.63186C7.17335 8.83373 7.29222 9.01751 7.44407 9.17206C7.59591 9.32661 7.77756 9.44872 7.97799 9.53098C8.17843 9.61324 8.39349 9.65394 8.61013 9.65061C8.82676 9.64728 9.04047 9.6 9.23829 9.51161C9.4361 9.42323 9.61391 9.2956 9.76093 9.13646C10.145 8.75845 10.6622 8.54659 11.2011 8.54659C11.74 8.54659 12.2572 8.75845 12.6413 9.13646C12.7883 9.2956 12.9661 9.42323 13.1639 9.51161C13.3617 9.6 13.5754 9.64728 13.7921 9.65061C14.0087 9.65394 14.2238 9.61324 14.4242 9.53098C14.6246 9.44872 14.8063 9.32661 14.9581 9.17206C15.11 9.01751 15.2289 8.83373 15.3076 8.63186C15.3863 8.43 15.4231 8.21426 15.416 7.99771C15.4088 7.78117 15.3578 7.56833 15.2659 7.37211C15.174 7.17589 15.0433 7.00037 14.8815 6.85619C13.8979 5.89445 12.5768 5.35596 11.2011 5.35596C9.8254 5.35596 8.50435 5.89445 7.52067 6.85619Z"
+														fill="#FBCF44"
+													></path>
+													<path
+														d="M31.2995 13.0696C31.0822 12.9263 30.8337 12.837 30.5749 12.8092C30.316 12.7813 30.0542 12.8158 29.8114 12.9096L23.8555 14.6538C23.952 15.0954 24.0013 15.546 24.0027 15.998V27.1993C24.0013 27.6513 23.952 28.1019 23.8555 28.5434L29.8114 30.2876C29.9991 30.3647 30.2005 30.4028 30.4034 30.3997C30.7223 30.3982 31.0337 30.3036 31.2995 30.1276C31.5167 29.9808 31.6945 29.783 31.8173 29.5514C31.94 29.3198 32.004 29.0616 32.0036 28.7995V14.3978C32.004 14.1357 31.94 13.8775 31.8173 13.6459C31.6945 13.4143 31.5167 13.2164 31.2995 13.0696Z"
+														fill="#AEBBC2"
+													></path>
+													<path
+														d="M17.6021 11.1978H4.80057C2.14929 11.1978 0 13.347 0 15.9983V27.1996C0 29.8509 2.14929 32.0002 4.80057 32.0002H17.6021C20.2534 32.0002 22.4026 29.8509 22.4026 27.1996V15.9983C22.4026 13.347 20.2534 11.1978 17.6021 11.1978Z"
+														fill="#AEBBC2"
+													></path>
+												</svg>
+												<div class="title_11523">Live Betting</div>
+												<div class="subtitle_5e9ff">
+													Bet on thousands of matches in dozens of different sports with live
+													betting.
 												</div>
-												<div class="first-column_1a5b6">
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="33"
-														height="32"
-														viewBox="0 0 33 32"
-														class="icon_2481e"
-													>
-														<path
-															d="M5.92092 5.34726C7.33101 3.96493 9.22691 3.19064 11.2015 3.19064C13.1762 3.19064 15.0721 3.96493 16.4822 5.34726C16.7889 5.62076 17.1892 5.76573 17.5999 5.75215C18.0107 5.73856 18.4005 5.56745 18.6885 5.27428C18.9765 4.98111 19.1407 4.58836 19.147 4.17742C19.1533 3.76649 19.0013 3.36887 18.7224 3.06699C16.7127 1.10093 14.013 0 11.2015 0C8.39007 0 5.69037 1.10093 3.68066 3.06699C3.40177 3.36887 3.24973 3.76649 3.25605 4.17742C3.26236 4.58836 3.42655 4.98111 3.71458 5.27428C4.0026 5.56745 4.39239 5.73856 4.80315 5.75215C5.21391 5.76573 5.61415 5.62076 5.92092 5.34726Z"
-															fill="#FBCF44"
-														></path>
-														<path
-															d="M7.52067 6.85619C7.35895 7.00037 7.22819 7.17589 7.13632 7.37211C7.04445 7.56833 6.99339 7.78117 6.98623 7.99771C6.97906 8.21426 7.01595 8.43 7.09465 8.63186C7.17335 8.83373 7.29222 9.01751 7.44407 9.17206C7.59591 9.32661 7.77756 9.44872 7.97799 9.53098C8.17843 9.61324 8.39349 9.65394 8.61013 9.65061C8.82676 9.64728 9.04047 9.6 9.23829 9.51161C9.4361 9.42323 9.61391 9.2956 9.76093 9.13646C10.145 8.75845 10.6622 8.54659 11.2011 8.54659C11.74 8.54659 12.2572 8.75845 12.6413 9.13646C12.7883 9.2956 12.9661 9.42323 13.1639 9.51161C13.3617 9.6 13.5754 9.64728 13.7921 9.65061C14.0087 9.65394 14.2238 9.61324 14.4242 9.53098C14.6246 9.44872 14.8063 9.32661 14.9581 9.17206C15.11 9.01751 15.2289 8.83373 15.3076 8.63186C15.3863 8.43 15.4231 8.21426 15.416 7.99771C15.4088 7.78117 15.3578 7.56833 15.2659 7.37211C15.174 7.17589 15.0433 7.00037 14.8815 6.85619C13.8979 5.89445 12.5768 5.35596 11.2011 5.35596C9.8254 5.35596 8.50435 5.89445 7.52067 6.85619Z"
-															fill="#FBCF44"
-														></path>
-														<path
-															d="M31.2995 13.0696C31.0822 12.9263 30.8337 12.837 30.5749 12.8092C30.316 12.7813 30.0542 12.8158 29.8114 12.9096L23.8555 14.6538C23.952 15.0954 24.0013 15.546 24.0027 15.998V27.1993C24.0013 27.6513 23.952 28.1019 23.8555 28.5434L29.8114 30.2876C29.9991 30.3647 30.2005 30.4028 30.4034 30.3997C30.7223 30.3982 31.0337 30.3036 31.2995 30.1276C31.5167 29.9808 31.6945 29.783 31.8173 29.5514C31.94 29.3198 32.004 29.0616 32.0036 28.7995V14.3978C32.004 14.1357 31.94 13.8775 31.8173 13.6459C31.6945 13.4143 31.5167 13.2164 31.2995 13.0696Z"
-															fill="#AEBBC2"
-														></path>
-														<path
-															d="M17.6021 11.1978H4.80057C2.14929 11.1978 0 13.347 0 15.9983V27.1996C0 29.8509 2.14929 32.0002 4.80057 32.0002H17.6021C20.2534 32.0002 22.4026 29.8509 22.4026 27.1996V15.9983C22.4026 13.347 20.2534 11.1978 17.6021 11.1978Z"
-															fill="#AEBBC2"
-														></path>
-													</svg>
-													<div class="title_11523">Live Betting</div>
-													<div class="subtitle_5e9ff">
-														Bet on thousands of matches in dozens of different sports with live
-														betting.
-													</div>
-													<ul class="first-column-links-list_d3603">
-														<li class="first-column-link-item_aa6b6">Approaching</li>
-														<li class="first-column-link-item_aa6b6">Highlights</li>
-														<li class="first-column-link-item_aa6b6">my favorites</li>
-														<li class="first-column-link-item_aa6b6">Match results</li>
-													</ul>
-													<button class="first-column-btn_d8a4c"> Play </button>
-												</div>
-												<div class="column_bb693">
-													<div class="column-title_5f3c2">Important Matches of the Day</div>
-													<div class="events-container_cd6d0">
-														<div class="event_27022">
-															<div class="event-top_b6ba8">
-																<div>
-																	<div class="event-title_2f940">
-																		Sportivo Luqueno - Red Bull Bragantino SP
-																	</div>
-																	<div class="event-subtitle_4e75c">
-																		Football<span class="dot_13469"></span>
-
-																		International (Clubs)<span class="dot_13469"></span>
-
-																		Copa Sudamericana
-																	</div>
+												<ul class="first-column-links-list_d3603">
+													<li class="first-column-link-item_aa6b6">Approaching</li>
+													<li class="first-column-link-item_aa6b6">Highlights</li>
+													<li class="first-column-link-item_aa6b6">my favorites</li>
+													<li class="first-column-link-item_aa6b6">Match results</li>
+												</ul>
+												<button class="first-column-btn_d8a4c"> Play </button>
+											</div>
+											<div class="column_bb693">
+												<div class="column-title_5f3c2">Important Matches of the Day</div>
+												<div class="events-container_cd6d0">
+													<div class="event_27022">
+														<div class="event-top_b6ba8">
+															<div>
+																<div class="event-title_2f940">
+																	Sportivo Luqueno - Red Bull Bragantino SP
 																</div>
-																<div>
-																	<span class="db time-container_a18e8">
-																		<div class="event-time_eebcf">45`</div>
-																		<div class="event-date_cb2c9"><span></span></div>
-																		<div class="event-date_cb2c9"></div>
-																	</span>
+																<div class="event-subtitle_4e75c">
+																	Football<span class="dot_13469"></span>
+
+																	International (Clubs)<span class="dot_13469"></span>
+
+																	Copa Sudamericana
 																</div>
 															</div>
-															<div class="outcome-column_f05b5">
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> one </span><span>
-																			2.00
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> X </span><span>
-																			3.00
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> 2 </span><span>
-																			3.80
-																		</span></button
-																	>
-																</div>
+															<div>
+																<span class="db time-container_a18e8">
+																	<div class="event-time_eebcf">45`</div>
+																	<div class="event-date_cb2c9"><span></span></div>
+																	<div class="event-date_cb2c9"></div>
+																</span>
 															</div>
 														</div>
-														<div class="event_27022">
-															<div class="event-top_b6ba8">
-																<div>
-																	<div class="event-title_2f940">
-																		Cruzeiro EC MG - Deportes Union La Calera
-																	</div>
-																	<div class="event-subtitle_4e75c">
-																		Football<span class="dot_13469"></span>
-
-																		International (Clubs)<span class="dot_13469"></span>
-
-																		Copa Sudamericana
-																	</div>
-																</div>
-																<div>
-																	<span class="db time-container_a18e8">
-																		<div class="event-time_eebcf">45`</div>
-																		<div class="event-date_cb2c9"><span></span></div>
-																		<div class="event-date_cb2c9"></div>
-																	</span>
-																</div>
+														<div class="outcome-column_f05b5">
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> one </span><span>
+																		2.00
+																	</span></button
+																>
 															</div>
-															<div class="outcome-column_f05b5">
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> one </span><span>
-																			1.05
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> X </span><span>
-																			8.25
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> 2 </span><span>
-																			30.00
-																		</span></button
-																	>
-																</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> X </span><span> 3.00 </span></button
+																>
 															</div>
-														</div>
-														<div class="event_27022">
-															<div class="event-top_b6ba8">
-																<div>
-																	<div class="event-title_2f940">
-																		CA San Lorenzo de Almagro - Liverpool Montevideo
-																	</div>
-																	<div class="event-subtitle_4e75c">
-																		Football<span class="dot_13469"></span>
-
-																		International (Clubs)<span class="dot_13469"></span>
-
-																		Libertadores Cup
-																	</div>
-																</div>
-																<div>
-																	<span class="db time-container_a18e8">
-																		<div class="event-time_eebcf">45`</div>
-																		<div class="event-date_cb2c9"><span></span></div>
-																		<div class="event-date_cb2c9"></div>
-																	</span>
-																</div>
-															</div>
-															<div class="outcome-column_f05b5">
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> one </span><span>
-																			1.10
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> X </span><span>
-																			7.00
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> 2 </span><span>
-																			30.00
-																		</span></button
-																	>
-																</div>
-															</div>
-														</div>
-														<div class="event_27022">
-															<div class="event-top_b6ba8">
-																<div>
-																	<div class="event-title_2f940">
-																		Sao Paulo FC SP - Barcelona SC
-																	</div>
-																	<div class="event-subtitle_4e75c">
-																		Football<span class="dot_13469"></span>
-
-																		International (Clubs)<span class="dot_13469"></span>
-
-																		Libertadores Cup
-																	</div>
-																</div>
-																<div>
-																	<span class="db time-container_a18e8">
-																		<div class="event-time_eebcf">45`</div>
-																		<div class="event-date_cb2c9"><span></span></div>
-																		<div class="event-date_cb2c9"></div>
-																	</span>
-																</div>
-															</div>
-															<div class="outcome-column_f05b5">
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> one </span><span>
-																			1.55
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> X </span><span>
-																			2.90
-																		</span></button
-																	>
-																</div>
-																<div>
-																	<button class="outcome_fc6a5"
-																		><span class="symbol_07c57"> 2 </span><span>
-																			11.00
-																		</span></button
-																	>
-																</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> 2 </span><span> 3.80 </span></button
+																>
 															</div>
 														</div>
 													</div>
-												</div>
-												<div class="column_bb693">
-													<div class="column-title_5f3c2">Popular Leagues</div>
-													<div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={RedStarImg} alt="Super League logo" />
+													<div class="event_27022">
+														<div class="event-top_b6ba8">
+															<div>
+																<div class="event-title_2f940">
+																	Cruzeiro EC MG - Deportes Union La Calera
 																</div>
-																<div>
-																	<h4 class="title_66ebf">Super League</h4>
-																	<span class="sport-country_ded94"> Soccer, Turkey </span>
+																<div class="event-subtitle_4e75c">
+																	Football<span class="dot_13469"></span>
+
+																	International (Clubs)<span class="dot_13469"></span>
+
+																	Copa Sudamericana
 																</div>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<span class="db time-container_a18e8">
+																	<div class="event-time_eebcf">45`</div>
+																	<div class="event-date_cb2c9"><span></span></div>
+																	<div class="event-date_cb2c9"></div>
+																</span>
+															</div>
 														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={LionImg} alt="Premier League logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">Premier League</h4>
-																	<span class="sport-country_ded94"> Soccer, England </span>
-																</div>
+														<div class="outcome-column_f05b5">
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> one </span><span>
+																		1.05
+																	</span></button
+																>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> X </span><span> 8.25 </span></button
+																>
+															</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> 2 </span><span> 30.00 </span></button
+																>
+															</div>
 														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={StarImg} alt="Champions League logo" />
+													</div>
+													<div class="event_27022">
+														<div class="event-top_b6ba8">
+															<div>
+																<div class="event-title_2f940">
+																	CA San Lorenzo de Almagro - Liverpool Montevideo
 																</div>
-																<div>
-																	<h4 class="title_66ebf">Champions League</h4>
-																	<span class="sport-country_ded94">
-																		Soccer, International Clubs
-																	</span>
+																<div class="event-subtitle_4e75c">
+																	Football<span class="dot_13469"></span>
+
+																	International (Clubs)<span class="dot_13469"></span>
+
+																	Libertadores Cup
 																</div>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<span class="db time-container_a18e8">
+																	<div class="event-time_eebcf">45`</div>
+																	<div class="event-date_cb2c9"><span></span></div>
+																	<div class="event-date_cb2c9"></div>
+																</span>
+															</div>
 														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={CupImg} alt="UEFA Europa League logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">UEFA Europa League</h4>
-																	<span class="sport-country_ded94">
-																		Soccer, International Clubs
-																	</span>
-																</div>
+														<div class="outcome-column_f05b5">
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> one </span><span>
+																		1.10
+																	</span></button
+																>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> X </span><span> 7.00 </span></button
+																>
+															</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> 2 </span><span> 30.00 </span></button
+																>
+															</div>
 														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={BigCupImg} alt="UEFA Europa Conference League logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">UEFA Europa Conference League</h4>
-																	<span class="sport-country_ded94">
-																		Soccer, International Clubs
-																	</span>
+													</div>
+													<div class="event_27022">
+														<div class="event-top_b6ba8">
+															<div>
+																<div class="event-title_2f940">Sao Paulo FC SP - Barcelona SC</div>
+																<div class="event-subtitle_4e75c">
+																	Football<span class="dot_13469"></span>
+
+																	International (Clubs)<span class="dot_13469"></span>
+
+																	Libertadores Cup
 																</div>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<span class="db time-container_a18e8">
+																	<div class="event-time_eebcf">45`</div>
+																	<div class="event-date_cb2c9"><span></span></div>
+																	<div class="event-date_cb2c9"></div>
+																</span>
+															</div>
 														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={SerieaImg} alt="Serie A logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">Serie A</h4>
-																	<span class="sport-country_ded94"> Soccer, Italy </span>
-																</div>
+														<div class="outcome-column_f05b5">
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> one </span><span>
+																		1.55
+																	</span></button
+																>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
-														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={ColorImg} alt="LaLiga logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">LaLiga</h4>
-																	<span class="sport-country_ded94"> Soccer, Spain </span>
-																</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> X </span><span> 2.90 </span></button
+																>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
-														</div>
-														<div class="league-item_f6646">
-															<div class="content-container_71a71">
-																<div class="item-img-wrapper_6e2fb">
-																	<img src={KickImg} alt="Bundesliga logo" />
-																</div>
-																<div>
-																	<h4 class="title_66ebf">Bundesliga</h4>
-																	<span class="sport-country_ded94"> Soccer, Germany </span>
-																</div>
+															<div>
+																<button class="outcome_fc6a5"
+																	><span class="symbol_07c57"> 2 </span><span> 11.00 </span></button
+																>
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="item-icon_f2b32"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
 														</div>
 													</div>
 												</div>
 											</div>
+											<div class="column_bb693">
+												<div class="column-title_5f3c2">Popular Leagues</div>
+												<div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={RedStarImg} alt="Super League logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">Super League</h4>
+																<span class="sport-country_ded94"> Soccer, Turkey </span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={LionImg} alt="Premier League logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">Premier League</h4>
+																<span class="sport-country_ded94"> Soccer, England </span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={StarImg} alt="Champions League logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">Champions League</h4>
+																<span class="sport-country_ded94">
+																	Soccer, International Clubs
+																</span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={CupImg} alt="UEFA Europa League logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">UEFA Europa League</h4>
+																<span class="sport-country_ded94">
+																	Soccer, International Clubs
+																</span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={BigCupImg} alt="UEFA Europa Conference League logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">UEFA Europa Conference League</h4>
+																<span class="sport-country_ded94">
+																	Soccer, International Clubs
+																</span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={SerieaImg} alt="Serie A logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">Serie A</h4>
+																<span class="sport-country_ded94"> Soccer, Italy </span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={ColorImg} alt="LaLiga logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">LaLiga</h4>
+																<span class="sport-country_ded94"> Soccer, Spain </span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="league-item_f6646">
+														<div class="content-container_71a71">
+															<div class="item-img-wrapper_6e2fb">
+																<img src={KickImg} alt="Bundesliga logo" />
+															</div>
+															<div>
+																<h4 class="title_66ebf">Bundesliga</h4>
+																<span class="sport-country_ded94"> Soccer, Germany </span>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="item-icon_f2b32"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+												</div>
+											</div>
 										</div>
-									</a>
+									</div>
 								</li>
 								<li
 									class={currentUrl === '/virtual'
@@ -1310,14 +1268,10 @@
 									class={currentUrl === '/live_casino'
 										? 'nav-menu-item_cc30f active_90a45'
 										: 'nav-menu-item_cc30f'}
+									on:mouseenter={() => (livecasino_modal_show = true)}
+									on:mouseleave={() => (livecasino_modal_show = false)}
 								>
-									<a
-										href="/live_casino"
-										id="LIVE_CASINO"
-										class="nav-menu-link_d5e39"
-										on:mouseenter={() => (livecasino_modal_show = true)}
-										on:mouseleave={() => (livecasino_modal_show = false)}
-									>
+									<a href="/live_casino" id="LIVE_CASINO" class="nav-menu-link_d5e39">
 										<span class="nav-menu-link-icon_8393e">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
@@ -1368,357 +1322,357 @@
 											</svg>
 										</span>
 										<span class="nav-menu-link-title_42160">Live Casino</span>
-										<div
-											class="popup-by-link_f48f3"
-											style={livecasino_modal_show ? 'display: block' : 'display: none'}
-										>
-											<div class="popup-content_419fb">
-												<!-- svelte-ignore a11y-no-static-element-interactions -->
-												<!-- svelte-ignore a11y-click-events-have-key-events -->
-												<div
-													class="close-icon-container_7d498"
-													on:click={() => (livecasino_modal_show = false)}
+									</a>
+									<div
+										class="popup-by-link_f48f3"
+										style={livecasino_modal_show ? 'display: block' : 'display: none'}
+									>
+										<div class="popup-content_419fb">
+											<!-- svelte-ignore a11y-no-static-element-interactions -->
+											<!-- svelte-ignore a11y-click-events-have-key-events -->
+											<div
+												class="close-icon-container_7d498"
+												on:click={() => (livecasino_modal_show = false)}
+											>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="8"
+													height="8"
+													viewBox="0 0 8 8"
+													fill="none"
+													class="close-icon_bbe65"
 												>
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="8"
-														height="8"
-														viewBox="0 0 8 8"
-														fill="none"
-														class="close-icon_bbe65"
-													>
-														<g clip-path="url(#clip0_34_19925)">
+													<g clip-path="url(#clip0_34_19925)">
+														<path
+															d="M5.3158 4.03742C5.29518 4.01679 5.29518 3.98321 5.3158 3.96258L7.83428 1.44287C8.04963 1.22743 8.04963 0.876877 7.83428 0.66143L7.335 0.16191C7.23065 0.0574891 7.0919 0 6.94431 0C6.79672 0 6.65796 0.0574891 6.5536 0.161894L4.03512 2.68164C4.02238 2.69438 4.00784 2.69707 3.9979 2.69707C3.98797 2.69707 3.97343 2.6944 3.96069 2.68164L1.44219 0.161894C1.33783 0.0574891 1.19908 0 1.05148 0C0.903876 0 0.765143 0.0574891 0.660785 0.161894L0.161515 0.66143C-0.0538385 0.876877 -0.0538385 1.22743 0.161515 1.44287L2.68 3.96258C2.70061 3.98321 2.70061 4.01679 2.68 4.03742L0.161515 6.55713C-0.0538229 6.77258 -0.0538229 7.12312 0.161515 7.33857L0.660785 7.83809C0.765143 7.94249 0.903892 7.99998 1.05148 7.99998C1.19907 7.99998 1.33783 7.94249 1.44219 7.83809L3.96067 5.31838C3.97341 5.30562 3.98794 5.30295 3.99789 5.30295C4.00784 5.30295 4.02235 5.30562 4.0351 5.31839L6.55358 7.83811C6.65794 7.94251 6.79669 8 6.94429 8C7.0919 8 7.23063 7.94251 7.33499 7.83811L7.83426 7.33859C8.0496 7.12315 8.0496 6.7726 7.83426 6.55715L5.3158 4.03742Z"
+															fill="currentColor"
+														></path>
+													</g>
+												</svg>
+											</div>
+											<div class="first-column_1a5b6">
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="32"
+													height="32"
+													viewBox="0 0 32 32"
+													class="icon_2481e"
+												>
+													<path
+														d="M20.7334 14.5216L20.0371 13.8278L16.6178 10.419C16.275 10.0765 15.7194 10.0765 15.3766 10.419L11.9659 13.8193L11.2656 14.5177C10.155 15.6338 10.1595 17.4389 11.2756 18.5495C12.2179 19.4871 13.6833 19.6491 14.8076 18.9397L14.4202 21.0302C14.3513 21.4001 14.5953 21.7559 14.9653 21.8248C15.0065 21.8325 15.0485 21.8363 15.0904 21.8363H16.9078C17.2841 21.8365 17.5894 21.5317 17.5896 21.1554C17.5896 21.1134 17.5857 21.0715 17.5781 21.0302L17.1861 18.928C18.3136 19.6424 19.7855 19.481 20.7314 18.5393C21.8414 17.4348 21.8459 15.6397 20.7414 14.5297C20.7388 14.527 20.7361 14.5243 20.7334 14.5216Z"
+														fill="#FBCF44"
+													></path>
+													<path
+														d="M4.57488 15.6082C4.66776 12.8483 5.76006 10.2161 7.64853 8.20135L7.64264 8.19611L4.40893 4.9624C1.66388 7.83749 0.0915215 11.6341 0 15.6082H4.57294H4.57488Z"
+														fill="#AEBBC2"
+													></path>
+													<path
+														d="M8.20119 7.64853C10.2158 5.76023 12.8477 4.66792 15.6073 4.57488C15.607 4.5725 15.607 4.57007 15.6073 4.56769V0C11.6338 0.0915215 7.8377 1.66367 4.96289 4.40828L8.19595 7.64264L8.20119 7.64853Z"
+														fill="#AEBBC2"
+													></path>
+													<path
+														d="M23.7994 24.3506C21.7847 26.2393 19.1526 27.3319 16.3926 27.4249C16.393 27.4273 16.393 27.4297 16.3926 27.4321V31.9998C20.3676 31.9092 24.1654 30.3367 27.0409 27.5908L23.8072 24.3565L23.7994 24.3506Z"
+														fill="#AEBBC2"
+													></path>
+													<path
+														d="M15.6086 27.4249C12.8484 27.332 10.216 26.2395 8.20114 24.3506L8.19654 24.3565L4.96289 27.5908C7.83846 30.3367 11.6362 31.9092 15.6113 31.9998V27.4321C15.61 27.4298 15.6091 27.4274 15.6086 27.4249Z"
+														fill="#AEBBC2"
+													></path>
+													<path
+														d="M7.64854 23.7982C5.76023 21.7836 4.66792 19.1517 4.57489 16.3921H0.00195312C0.0920141 20.3668 1.66373 24.1646 4.40894 27.0404L7.64264 23.8061C7.64394 23.8031 7.646 23.8004 7.64854 23.7982Z"
+														fill="#AEBBC2"
+													></path>
+													<path
+														d="M27.4252 16.3921C27.3323 19.152 26.24 21.7842 24.3516 23.7989C24.3538 23.8 24.3558 23.8016 24.3575 23.8035L27.5912 27.0404C30.3371 24.1649 31.9095 20.3671 32.0001 16.3921H27.4272H27.4252Z"
+														fill="#AEBBC2"
+													></path>
+													<path
+														d="M24.3516 8.20184C26.2399 10.2164 27.3322 12.8483 27.4252 15.608H31.9981C31.907 11.6344 30.3353 7.83808 27.5912 4.96289L24.3575 8.19659L24.3516 8.20184Z"
+														fill="#AEBBC2"
+													></path>
+													<path
+														d="M16.3926 4.57488C19.1524 4.66776 21.7847 5.76006 23.7994 7.64853L23.8046 7.64264L27.0377 4.40828C24.1627 1.66351 20.3664 0.0913592 16.3926 0V4.56769C16.393 4.57007 16.393 4.5725 16.3926 4.57488Z"
+														fill="#AEBBC2"
+													></path>
+												</svg>
+												<div class="title_11523">Live Casino</div>
+												<div class="subtitle_5e9ff">
+													Multiply your earnings with the most profitable demonstration games from
+													popular providers!
+												</div>
+												<ul class="first-column-links-list_d3603">
+													<li class="first-column-link-item_aa6b6">Popular</li>
+													<li class="first-column-link-item_aa6b6">favorites</li>
+													<li class="first-column-link-item_aa6b6">Roulette</li>
+													<li class="first-column-link-item_aa6b6">blackjack</li>
+													<li class="first-column-link-item_aa6b6">Games</li>
+												</ul>
+												<button class="first-column-btn_d8a4c"> Play </button>
+											</div>
+											<div class="column_bb693">
+												<div class="column-title_5f3c2">Popular Games</div>
+												<div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="live-casino-game-image_755bb">
+																<img src={Lucky_6_Roulette} alt="game" />
+															</div>
+															<div>
+																<div class="game-title_41a8a">Lucky 6 Roulette</div>
+																<div class="game-provider_58233">Pragmatic Play</div>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
 															<path
-																d="M5.3158 4.03742C5.29518 4.01679 5.29518 3.98321 5.3158 3.96258L7.83428 1.44287C8.04963 1.22743 8.04963 0.876877 7.83428 0.66143L7.335 0.16191C7.23065 0.0574891 7.0919 0 6.94431 0C6.79672 0 6.65796 0.0574891 6.5536 0.161894L4.03512 2.68164C4.02238 2.69438 4.00784 2.69707 3.9979 2.69707C3.98797 2.69707 3.97343 2.6944 3.96069 2.68164L1.44219 0.161894C1.33783 0.0574891 1.19908 0 1.05148 0C0.903876 0 0.765143 0.0574891 0.660785 0.161894L0.161515 0.66143C-0.0538385 0.876877 -0.0538385 1.22743 0.161515 1.44287L2.68 3.96258C2.70061 3.98321 2.70061 4.01679 2.68 4.03742L0.161515 6.55713C-0.0538229 6.77258 -0.0538229 7.12312 0.161515 7.33857L0.660785 7.83809C0.765143 7.94249 0.903892 7.99998 1.05148 7.99998C1.19907 7.99998 1.33783 7.94249 1.44219 7.83809L3.96067 5.31838C3.97341 5.30562 3.98794 5.30295 3.99789 5.30295C4.00784 5.30295 4.02235 5.30562 4.0351 5.31839L6.55358 7.83811C6.65794 7.94251 6.79669 8 6.94429 8C7.0919 8 7.23063 7.94251 7.33499 7.83811L7.83426 7.33859C8.0496 7.12315 8.0496 6.7726 7.83426 6.55715L5.3158 4.03742Z"
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
 																fill="currentColor"
 															></path>
-														</g>
-													</svg>
-												</div>
-												<div class="first-column_1a5b6">
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="32"
-														height="32"
-														viewBox="0 0 32 32"
-														class="icon_2481e"
-													>
-														<path
-															d="M20.7334 14.5216L20.0371 13.8278L16.6178 10.419C16.275 10.0765 15.7194 10.0765 15.3766 10.419L11.9659 13.8193L11.2656 14.5177C10.155 15.6338 10.1595 17.4389 11.2756 18.5495C12.2179 19.4871 13.6833 19.6491 14.8076 18.9397L14.4202 21.0302C14.3513 21.4001 14.5953 21.7559 14.9653 21.8248C15.0065 21.8325 15.0485 21.8363 15.0904 21.8363H16.9078C17.2841 21.8365 17.5894 21.5317 17.5896 21.1554C17.5896 21.1134 17.5857 21.0715 17.5781 21.0302L17.1861 18.928C18.3136 19.6424 19.7855 19.481 20.7314 18.5393C21.8414 17.4348 21.8459 15.6397 20.7414 14.5297C20.7388 14.527 20.7361 14.5243 20.7334 14.5216Z"
-															fill="#FBCF44"
-														></path>
-														<path
-															d="M4.57488 15.6082C4.66776 12.8483 5.76006 10.2161 7.64853 8.20135L7.64264 8.19611L4.40893 4.9624C1.66388 7.83749 0.0915215 11.6341 0 15.6082H4.57294H4.57488Z"
-															fill="#AEBBC2"
-														></path>
-														<path
-															d="M8.20119 7.64853C10.2158 5.76023 12.8477 4.66792 15.6073 4.57488C15.607 4.5725 15.607 4.57007 15.6073 4.56769V0C11.6338 0.0915215 7.8377 1.66367 4.96289 4.40828L8.19595 7.64264L8.20119 7.64853Z"
-															fill="#AEBBC2"
-														></path>
-														<path
-															d="M23.7994 24.3506C21.7847 26.2393 19.1526 27.3319 16.3926 27.4249C16.393 27.4273 16.393 27.4297 16.3926 27.4321V31.9998C20.3676 31.9092 24.1654 30.3367 27.0409 27.5908L23.8072 24.3565L23.7994 24.3506Z"
-															fill="#AEBBC2"
-														></path>
-														<path
-															d="M15.6086 27.4249C12.8484 27.332 10.216 26.2395 8.20114 24.3506L8.19654 24.3565L4.96289 27.5908C7.83846 30.3367 11.6362 31.9092 15.6113 31.9998V27.4321C15.61 27.4298 15.6091 27.4274 15.6086 27.4249Z"
-															fill="#AEBBC2"
-														></path>
-														<path
-															d="M7.64854 23.7982C5.76023 21.7836 4.66792 19.1517 4.57489 16.3921H0.00195312C0.0920141 20.3668 1.66373 24.1646 4.40894 27.0404L7.64264 23.8061C7.64394 23.8031 7.646 23.8004 7.64854 23.7982Z"
-															fill="#AEBBC2"
-														></path>
-														<path
-															d="M27.4252 16.3921C27.3323 19.152 26.24 21.7842 24.3516 23.7989C24.3538 23.8 24.3558 23.8016 24.3575 23.8035L27.5912 27.0404C30.3371 24.1649 31.9095 20.3671 32.0001 16.3921H27.4272H27.4252Z"
-															fill="#AEBBC2"
-														></path>
-														<path
-															d="M24.3516 8.20184C26.2399 10.2164 27.3322 12.8483 27.4252 15.608H31.9981C31.907 11.6344 30.3353 7.83808 27.5912 4.96289L24.3575 8.19659L24.3516 8.20184Z"
-															fill="#AEBBC2"
-														></path>
-														<path
-															d="M16.3926 4.57488C19.1524 4.66776 21.7847 5.76006 23.7994 7.64853L23.8046 7.64264L27.0377 4.40828C24.1627 1.66351 20.3664 0.0913592 16.3926 0V4.56769C16.393 4.57007 16.393 4.5725 16.3926 4.57488Z"
-															fill="#AEBBC2"
-														></path>
-													</svg>
-													<div class="title_11523">Live Casino</div>
-													<div class="subtitle_5e9ff">
-														Multiply your earnings with the most profitable demonstration games from
-														popular providers!
+														</svg>
 													</div>
-													<ul class="first-column-links-list_d3603">
-														<li class="first-column-link-item_aa6b6">Popular</li>
-														<li class="first-column-link-item_aa6b6">favorites</li>
-														<li class="first-column-link-item_aa6b6">Roulette</li>
-														<li class="first-column-link-item_aa6b6">blackjack</li>
-														<li class="first-column-link-item_aa6b6">Games</li>
-													</ul>
-													<button class="first-column-btn_d8a4c"> Play </button>
-												</div>
-												<div class="column_bb693">
-													<div class="column-title_5f3c2">Popular Games</div>
-													<div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="live-casino-game-image_755bb">
-																	<img src={Lucky_6_Roulette} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">Lucky 6 Roulette</div>
-																	<div class="game-provider_58233">Pragmatic Play</div>
-																</div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="live-casino-game-image_755bb">
+																<img src={Turkish_Mega_Roulette} alt="game" />
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<div class="game-title_41a8a">Turkish Mega Roulette</div>
+																<div class="game-provider_58233">Pragmatic Play</div>
+															</div>
 														</div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="live-casino-game-image_755bb">
-																	<img src={Turkish_Mega_Roulette} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">Turkish Mega Roulette</div>
-																	<div class="game-provider_58233">Pragmatic Play</div>
-																</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="live-casino-game-image_755bb">
+																<img src={Live_Mega_Wheel} alt="game" />
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<div class="game-title_41a8a">Live - Mega Wheel</div>
+																<div class="game-provider_58233">Pragmatic Play</div>
+															</div>
 														</div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="live-casino-game-image_755bb">
-																	<img src={Live_Mega_Wheel} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">Live - Mega Wheel</div>
-																	<div class="game-provider_58233">Pragmatic Play</div>
-																</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="live-casino-game-image_755bb">
+																<img src={Live_Mega_Roulette} alt="game" />
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<div class="game-title_41a8a">Live - Mega Roulette</div>
+																<div class="game-provider_58233">Pragmatic Play</div>
+															</div>
 														</div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="live-casino-game-image_755bb">
-																	<img src={Live_Mega_Roulette} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">Live - Mega Roulette</div>
-																	<div class="game-provider_58233">Pragmatic Play</div>
-																</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="live-casino-game-image_755bb">
+																<img src={Crazy_Time} alt="game" />
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<div class="game-title_41a8a">Crazy Time</div>
+																<div class="game-provider_58233">evolution</div>
+															</div>
 														</div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="live-casino-game-image_755bb">
-																	<img src={Crazy_Time} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">Crazy Time</div>
-																	<div class="game-provider_58233">evolution</div>
-																</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="live-casino-game-image_755bb">
+																<img src={Live_Sweet_Bonanza_CandyLand} alt="game" />
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<div class="game-title_41a8a">Live - Sweet Bonanza CandyLand</div>
+																<div class="game-provider_58233">Pragmatic Play</div>
+															</div>
 														</div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="live-casino-game-image_755bb">
-																	<img src={Live_Sweet_Bonanza_CandyLand} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">Live - Sweet Bonanza CandyLand</div>
-																	<div class="game-provider_58233">Pragmatic Play</div>
-																</div>
-															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
-														</div>
-													</div>
-												</div>
-												<div class="column_bb693">
-													<div class="column-title_5f3c2">Popular Providers</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 ezugi_evolution_9c4fa"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">evolution</div>
-																<span class="item-count_b76d4"> 101 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 pragmatic_play_casino_61c8d"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Pragmatic Play</div>
-																<span class="item-count_b76d4"> 112 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 ezugi_cd96b"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Ezugi</div>
-																<span class="item-count_b76d4"> 32 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 bgaming_casino_5eea3"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Bgaming Casino</div>
-																<span class="item-count_b76d4"> 21 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 onetouch_casino_6a4b6"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">OneTouch Casino</div>
-																<span class="item-count_b76d4"> 48 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 playtech_casino_e02ca"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Playtech Casino</div>
-																<span class="item-count_b76d4"> 41 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 egt_casino_c0589"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Amusnet (EGT)</div>
-																<span class="item-count_b76d4"> 7 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 lucky_streak_5f655"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Lucky Streak</div>
-																<span class="item-count_b76d4"> 15 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 vivo_casino_78b28"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">vivo</div>
-																<span class="item-count_b76d4"> 21 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 alg_net_87bd7"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Absolute Gaming</div>
-																<span class="item-count_b76d4"> 15 </span>
-															</div>
-														</button>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
 													</div>
 												</div>
 											</div>
+											<div class="column_bb693">
+												<div class="column-title_5f3c2">Popular Providers</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 ezugi_evolution_9c4fa"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">evolution</div>
+															<span class="item-count_b76d4"> 101 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 pragmatic_play_casino_61c8d"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Pragmatic Play</div>
+															<span class="item-count_b76d4"> 112 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 ezugi_cd96b"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Ezugi</div>
+															<span class="item-count_b76d4"> 32 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 bgaming_casino_5eea3"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Bgaming Casino</div>
+															<span class="item-count_b76d4"> 21 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 onetouch_casino_6a4b6"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">OneTouch Casino</div>
+															<span class="item-count_b76d4"> 48 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 playtech_casino_e02ca"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Playtech Casino</div>
+															<span class="item-count_b76d4"> 41 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 egt_casino_c0589"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Amusnet (EGT)</div>
+															<span class="item-count_b76d4"> 7 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 lucky_streak_5f655"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Lucky Streak</div>
+															<span class="item-count_b76d4"> 15 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 vivo_casino_78b28"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">vivo</div>
+															<span class="item-count_b76d4"> 21 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 alg_net_87bd7"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Absolute Gaming</div>
+															<span class="item-count_b76d4"> 15 </span>
+														</div>
+													</button>
+												</div>
+											</div>
 										</div>
-									</a>
+									</div>
 								</li>
 								<li
 									class={currentUrl === '/casino'
@@ -2133,14 +2087,10 @@
 									class={currentUrl === '/other_games'
 										? 'nav-menu-item_cc30f active_90a45'
 										: 'nav-menu-item_cc30f'}
+									on:mouseenter={() => (games_modal_show = true)}
+									on:mouseleave={() => (games_modal_show = false)}
 								>
-									<a
-										href="/other_games"
-										id="OTHER_GAMES"
-										class="nav-menu-link_d5e39"
-										on:mouseenter={() => (games_modal_show = true)}
-										on:mouseleave={() => (games_modal_show = false)}
-									>
+									<a href="/other_games" id="OTHER_GAMES" class="nav-menu-link_d5e39">
 										<span class="nav-menu-link-icon_8393e">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
@@ -2163,325 +2113,325 @@
 											</svg>
 										</span>
 										<span class="nav-menu-link-title_42160">Games</span>
-										<div
-											class="popup-by-link_f48f3"
-											style={games_modal_show ? 'display: block' : 'display: none'}
-										>
-											<div class="popup-content_419fb">
-												<!-- svelte-ignore a11y-no-static-element-interactions -->
-												<!-- svelte-ignore a11y-click-events-have-key-events -->
-												<div
-													class="close-icon-container_7d498"
-													on:click={() => (games_modal_show = false)}
+									</a>
+									<div
+										class="popup-by-link_f48f3"
+										style={games_modal_show ? 'display: block' : 'display: none'}
+									>
+										<div class="popup-content_419fb">
+											<!-- svelte-ignore a11y-no-static-element-interactions -->
+											<!-- svelte-ignore a11y-click-events-have-key-events -->
+											<div
+												class="close-icon-container_7d498"
+												on:click={() => (games_modal_show = false)}
+											>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="8"
+													height="8"
+													viewBox="0 0 8 8"
+													fill="none"
+													class="close-icon_bbe65"
 												>
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="8"
-														height="8"
-														viewBox="0 0 8 8"
-														fill="none"
-														class="close-icon_bbe65"
-													>
-														<g clip-path="url(#clip0_34_19925)">
+													<g clip-path="url(#clip0_34_19925)">
+														<path
+															d="M5.3158 4.03742C5.29518 4.01679 5.29518 3.98321 5.3158 3.96258L7.83428 1.44287C8.04963 1.22743 8.04963 0.876877 7.83428 0.66143L7.335 0.16191C7.23065 0.0574891 7.0919 0 6.94431 0C6.79672 0 6.65796 0.0574891 6.5536 0.161894L4.03512 2.68164C4.02238 2.69438 4.00784 2.69707 3.9979 2.69707C3.98797 2.69707 3.97343 2.6944 3.96069 2.68164L1.44219 0.161894C1.33783 0.0574891 1.19908 0 1.05148 0C0.903876 0 0.765143 0.0574891 0.660785 0.161894L0.161515 0.66143C-0.0538385 0.876877 -0.0538385 1.22743 0.161515 1.44287L2.68 3.96258C2.70061 3.98321 2.70061 4.01679 2.68 4.03742L0.161515 6.55713C-0.0538229 6.77258 -0.0538229 7.12312 0.161515 7.33857L0.660785 7.83809C0.765143 7.94249 0.903892 7.99998 1.05148 7.99998C1.19907 7.99998 1.33783 7.94249 1.44219 7.83809L3.96067 5.31838C3.97341 5.30562 3.98794 5.30295 3.99789 5.30295C4.00784 5.30295 4.02235 5.30562 4.0351 5.31839L6.55358 7.83811C6.65794 7.94251 6.79669 8 6.94429 8C7.0919 8 7.23063 7.94251 7.33499 7.83811L7.83426 7.33859C8.0496 7.12315 8.0496 6.7726 7.83426 6.55715L5.3158 4.03742Z"
+															fill="currentColor"
+														></path>
+													</g>
+												</svg>
+											</div>
+											<div class="first-column_1a5b6">
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													width="32"
+													height="32"
+													viewBox="0 0 32 32"
+													class="icon_2481e"
+												>
+													<path
+														d="M16.2607 10.9855C16.9346 10.3085 17.7785 9.82585 18.7037 9.58824V2.67226C18.7037 1.96353 18.4221 1.28383 17.921 0.782687C17.4198 0.281541 16.7401 0 16.0314 0L4.00625 0C3.29752 0 2.61782 0.281541 2.11667 0.782687C1.61553 1.28383 1.33398 1.96353 1.33398 2.67226V14.6974C1.33398 15.4062 1.61553 16.0859 2.11667 16.587C2.61782 17.0882 3.29752 17.3697 4.00625 17.3697H9.87654L16.2607 10.9855ZM13.3592 4.00839C13.6234 4.00839 13.8817 4.08675 14.1015 4.23357C14.3212 4.38039 14.4925 4.58906 14.5936 4.83321C14.6947 5.07735 14.7212 5.346 14.6696 5.60519C14.6181 5.86437 14.4908 6.10245 14.3039 6.28931C14.1171 6.47617 13.879 6.60343 13.6198 6.65498C13.3606 6.70653 13.092 6.68007 12.8478 6.57895C12.6037 6.47782 12.395 6.30656 12.2482 6.08684C12.1014 5.86711 12.023 5.60878 12.023 5.34452C12.023 4.99016 12.1638 4.65031 12.4144 4.39974C12.6649 4.14916 13.0048 4.00839 13.3592 4.00839ZM13.3592 9.35291C13.6234 9.35291 13.8817 9.43128 14.1015 9.57809C14.3212 9.72491 14.4925 9.93358 14.5936 10.1777C14.6947 10.4219 14.7212 10.6905 14.6696 10.9497C14.6181 11.2089 14.4908 11.447 14.3039 11.6338C14.1171 11.8207 13.879 11.9479 13.6198 11.9995C13.3606 12.0511 13.092 12.0246 12.8478 11.9235C12.6037 11.8223 12.395 11.6511 12.2482 11.4314C12.1014 11.2116 12.023 10.9533 12.023 10.689C12.023 10.3347 12.1638 9.99483 12.4144 9.74426C12.6649 9.49368 13.0048 9.35291 13.3592 9.35291ZM6.67851 4.00839C6.94277 4.00839 7.2011 4.08675 7.42082 4.23357C7.64055 4.38039 7.8118 4.58906 7.91293 4.83321C8.01406 5.07735 8.04052 5.346 7.98896 5.60519C7.93741 5.86437 7.81015 6.10245 7.62329 6.28931C7.43643 6.47617 7.19836 6.60343 6.93917 6.65498C6.67999 6.70653 6.41134 6.68007 6.16719 6.57895C5.92305 6.47782 5.71437 6.30656 5.56755 6.08684C5.42074 5.86711 5.34238 5.60878 5.34238 5.34452C5.34238 4.99016 5.48315 4.65031 5.73372 4.39974C5.98429 4.14916 6.32414 4.00839 6.67851 4.00839ZM6.67851 13.3613C6.41425 13.3613 6.15592 13.2829 5.93619 13.1361C5.71647 12.9893 5.54521 12.7806 5.44408 12.5365C5.34295 12.2923 5.31649 12.0237 5.36805 11.7645C5.4196 11.5053 5.54686 11.2673 5.73372 11.0804C5.92058 10.8935 6.15866 10.7663 6.41784 10.7147C6.67702 10.6632 6.94568 10.6896 7.18982 10.7908C7.43397 10.8919 7.64264 11.0631 7.78946 11.2829C7.93627 11.5026 8.01464 11.7609 8.01464 12.0252C8.01464 12.3795 7.87387 12.7194 7.62329 12.97C7.37272 13.2205 7.03287 13.3613 6.67851 13.3613Z"
+														fill="#FBCF44"
+													></path>
+													<path
+														d="M29.4877 18.544L22.6507 11.7068C22.4246 11.48 22.1596 11.2958 21.8682 11.1629C20.1762 10.3958 18.3869 10.7488 17.2056 11.9311L10.3685 18.7675C10.1417 18.9935 9.95739 19.2586 9.82449 19.5499C9.05739 21.242 9.41046 23.0312 10.5928 24.2125L17.4297 31.0497C17.6558 31.2765 17.9209 31.4608 18.2122 31.5936C19.9043 32.3608 21.6935 32.0077 22.8748 30.8254L29.712 23.9884C29.9388 23.7623 30.123 23.4973 30.2559 23.2059C31.0224 21.5145 30.6693 19.7248 29.4877 18.544ZM20.0399 22.7144C19.7756 22.7144 19.5173 22.636 19.2976 22.4892C19.0778 22.3424 18.9066 22.1337 18.8055 21.8896C18.7043 21.6454 18.6779 21.3768 18.7294 21.1176C18.781 20.8584 18.9082 20.6203 19.0951 20.4335C19.282 20.2466 19.52 20.1194 19.7792 20.0678C20.0384 20.0162 20.3071 20.0427 20.5512 20.1438C20.7953 20.245 21.004 20.4162 21.1508 20.6359C21.2976 20.8557 21.376 21.114 21.376 21.3783C21.376 21.7326 21.2352 22.0725 20.9847 22.323C20.7341 22.5736 20.3942 22.7144 20.0399 22.7144Z"
+														fill="#AEBBC2"
+													></path>
+												</svg>
+												<div class="title_11523">Games</div>
+												<div class="subtitle_5e9ff">
+													Multiply your earnings with the most profitable demonstration games from
+													popular providers!
+												</div>
+												<ul class="first-column-links-list_d3603">
+													<li class="first-column-link-item_aa6b6">favorites</li>
+												</ul>
+												<button class="first-column-btn_d8a4c"> Play </button>
+											</div>
+											<div class="column_bb693">
+												<div class="column-title_5f3c2">Popular Games</div>
+												<div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="casino-game-image_0e221">
+																<img src={Big_Bass_Crash} alt="game" />
+															</div>
+															<div>
+																<div class="game-title_41a8a">Big Bass Crash</div>
+																<div class="game-provider_58233">Pragmatic Play</div>
+															</div>
+														</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
 															<path
-																d="M5.3158 4.03742C5.29518 4.01679 5.29518 3.98321 5.3158 3.96258L7.83428 1.44287C8.04963 1.22743 8.04963 0.876877 7.83428 0.66143L7.335 0.16191C7.23065 0.0574891 7.0919 0 6.94431 0C6.79672 0 6.65796 0.0574891 6.5536 0.161894L4.03512 2.68164C4.02238 2.69438 4.00784 2.69707 3.9979 2.69707C3.98797 2.69707 3.97343 2.6944 3.96069 2.68164L1.44219 0.161894C1.33783 0.0574891 1.19908 0 1.05148 0C0.903876 0 0.765143 0.0574891 0.660785 0.161894L0.161515 0.66143C-0.0538385 0.876877 -0.0538385 1.22743 0.161515 1.44287L2.68 3.96258C2.70061 3.98321 2.70061 4.01679 2.68 4.03742L0.161515 6.55713C-0.0538229 6.77258 -0.0538229 7.12312 0.161515 7.33857L0.660785 7.83809C0.765143 7.94249 0.903892 7.99998 1.05148 7.99998C1.19907 7.99998 1.33783 7.94249 1.44219 7.83809L3.96067 5.31838C3.97341 5.30562 3.98794 5.30295 3.99789 5.30295C4.00784 5.30295 4.02235 5.30562 4.0351 5.31839L6.55358 7.83811C6.65794 7.94251 6.79669 8 6.94429 8C7.0919 8 7.23063 7.94251 7.33499 7.83811L7.83426 7.33859C8.0496 7.12315 8.0496 6.7726 7.83426 6.55715L5.3158 4.03742Z"
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
 																fill="currentColor"
 															></path>
-														</g>
-													</svg>
-												</div>
-												<div class="first-column_1a5b6">
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="32"
-														height="32"
-														viewBox="0 0 32 32"
-														class="icon_2481e"
-													>
-														<path
-															d="M16.2607 10.9855C16.9346 10.3085 17.7785 9.82585 18.7037 9.58824V2.67226C18.7037 1.96353 18.4221 1.28383 17.921 0.782687C17.4198 0.281541 16.7401 0 16.0314 0L4.00625 0C3.29752 0 2.61782 0.281541 2.11667 0.782687C1.61553 1.28383 1.33398 1.96353 1.33398 2.67226V14.6974C1.33398 15.4062 1.61553 16.0859 2.11667 16.587C2.61782 17.0882 3.29752 17.3697 4.00625 17.3697H9.87654L16.2607 10.9855ZM13.3592 4.00839C13.6234 4.00839 13.8817 4.08675 14.1015 4.23357C14.3212 4.38039 14.4925 4.58906 14.5936 4.83321C14.6947 5.07735 14.7212 5.346 14.6696 5.60519C14.6181 5.86437 14.4908 6.10245 14.3039 6.28931C14.1171 6.47617 13.879 6.60343 13.6198 6.65498C13.3606 6.70653 13.092 6.68007 12.8478 6.57895C12.6037 6.47782 12.395 6.30656 12.2482 6.08684C12.1014 5.86711 12.023 5.60878 12.023 5.34452C12.023 4.99016 12.1638 4.65031 12.4144 4.39974C12.6649 4.14916 13.0048 4.00839 13.3592 4.00839ZM13.3592 9.35291C13.6234 9.35291 13.8817 9.43128 14.1015 9.57809C14.3212 9.72491 14.4925 9.93358 14.5936 10.1777C14.6947 10.4219 14.7212 10.6905 14.6696 10.9497C14.6181 11.2089 14.4908 11.447 14.3039 11.6338C14.1171 11.8207 13.879 11.9479 13.6198 11.9995C13.3606 12.0511 13.092 12.0246 12.8478 11.9235C12.6037 11.8223 12.395 11.6511 12.2482 11.4314C12.1014 11.2116 12.023 10.9533 12.023 10.689C12.023 10.3347 12.1638 9.99483 12.4144 9.74426C12.6649 9.49368 13.0048 9.35291 13.3592 9.35291ZM6.67851 4.00839C6.94277 4.00839 7.2011 4.08675 7.42082 4.23357C7.64055 4.38039 7.8118 4.58906 7.91293 4.83321C8.01406 5.07735 8.04052 5.346 7.98896 5.60519C7.93741 5.86437 7.81015 6.10245 7.62329 6.28931C7.43643 6.47617 7.19836 6.60343 6.93917 6.65498C6.67999 6.70653 6.41134 6.68007 6.16719 6.57895C5.92305 6.47782 5.71437 6.30656 5.56755 6.08684C5.42074 5.86711 5.34238 5.60878 5.34238 5.34452C5.34238 4.99016 5.48315 4.65031 5.73372 4.39974C5.98429 4.14916 6.32414 4.00839 6.67851 4.00839ZM6.67851 13.3613C6.41425 13.3613 6.15592 13.2829 5.93619 13.1361C5.71647 12.9893 5.54521 12.7806 5.44408 12.5365C5.34295 12.2923 5.31649 12.0237 5.36805 11.7645C5.4196 11.5053 5.54686 11.2673 5.73372 11.0804C5.92058 10.8935 6.15866 10.7663 6.41784 10.7147C6.67702 10.6632 6.94568 10.6896 7.18982 10.7908C7.43397 10.8919 7.64264 11.0631 7.78946 11.2829C7.93627 11.5026 8.01464 11.7609 8.01464 12.0252C8.01464 12.3795 7.87387 12.7194 7.62329 12.97C7.37272 13.2205 7.03287 13.3613 6.67851 13.3613Z"
-															fill="#FBCF44"
-														></path>
-														<path
-															d="M29.4877 18.544L22.6507 11.7068C22.4246 11.48 22.1596 11.2958 21.8682 11.1629C20.1762 10.3958 18.3869 10.7488 17.2056 11.9311L10.3685 18.7675C10.1417 18.9935 9.95739 19.2586 9.82449 19.5499C9.05739 21.242 9.41046 23.0312 10.5928 24.2125L17.4297 31.0497C17.6558 31.2765 17.9209 31.4608 18.2122 31.5936C19.9043 32.3608 21.6935 32.0077 22.8748 30.8254L29.712 23.9884C29.9388 23.7623 30.123 23.4973 30.2559 23.2059C31.0224 21.5145 30.6693 19.7248 29.4877 18.544ZM20.0399 22.7144C19.7756 22.7144 19.5173 22.636 19.2976 22.4892C19.0778 22.3424 18.9066 22.1337 18.8055 21.8896C18.7043 21.6454 18.6779 21.3768 18.7294 21.1176C18.781 20.8584 18.9082 20.6203 19.0951 20.4335C19.282 20.2466 19.52 20.1194 19.7792 20.0678C20.0384 20.0162 20.3071 20.0427 20.5512 20.1438C20.7953 20.245 21.004 20.4162 21.1508 20.6359C21.2976 20.8557 21.376 21.114 21.376 21.3783C21.376 21.7326 21.2352 22.0725 20.9847 22.323C20.7341 22.5736 20.3942 22.7144 20.0399 22.7144Z"
-															fill="#AEBBC2"
-														></path>
-													</svg>
-													<div class="title_11523">Games</div>
-													<div class="subtitle_5e9ff">
-														Multiply your earnings with the most profitable demonstration games from
-														popular providers!
+														</svg>
 													</div>
-													<ul class="first-column-links-list_d3603">
-														<li class="first-column-link-item_aa6b6">favorites</li>
-													</ul>
-													<button class="first-column-btn_d8a4c"> Play </button>
-												</div>
-												<div class="column_bb693">
-													<div class="column-title_5f3c2">Popular Games</div>
-													<div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="casino-game-image_0e221">
-																	<img src={Big_Bass_Crash} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">Big Bass Crash</div>
-																	<div class="game-provider_58233">Pragmatic Play</div>
-																</div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="casino-game-image_0e221">
+																<img src={Live_Spaceman} alt="game" />
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<div class="game-title_41a8a">Live - Spaceman</div>
+																<div class="game-provider_58233">Pragmatic Play</div>
+															</div>
 														</div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="casino-game-image_0e221">
-																	<img src={Live_Spaceman} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">Live - Spaceman</div>
-																	<div class="game-provider_58233">Pragmatic Play</div>
-																</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="casino-game-image_0e221">
+																<img src={T_Basket} alt="game" />
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<div class="game-title_41a8a">T-Basket</div>
+																<div class="game-provider_58233">Twain Sports</div>
+															</div>
 														</div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="casino-game-image_0e221">
-																	<img src={T_Basket} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">T-Basket</div>
-																	<div class="game-provider_58233">Twain Sports</div>
-																</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="casino-game-image_0e221">
+																<img src={T_Kick} alt="game" />
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<div class="game-title_41a8a">T-Kick</div>
+																<div class="game-provider_58233">Twain Sports</div>
+															</div>
 														</div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="casino-game-image_0e221">
-																	<img src={T_Kick} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">T-Kick</div>
-																	<div class="game-provider_58233">Twain Sports</div>
-																</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="casino-game-image_0e221">
+																<img src={Twain_Sport} alt="game" />
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<div class="game-title_41a8a">Twain Sports</div>
+																<div class="game-provider_58233">Twain Sports</div>
+															</div>
 														</div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="casino-game-image_0e221">
-																	<img src={Twain_Sport} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">Twain Sports</div>
-																	<div class="game-provider_58233">Twain Sports</div>
-																</div>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
+													</div>
+													<div class="game-container_6b25a">
+														<div class="game-content_557e9">
+															<div class="casino-game-image_0e221">
+																<img src={Raptor} alt="game" />
 															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
+															<div>
+																<div class="game-title_41a8a">raptor</div>
+																<div class="game-provider_58233">Falcon Gaming</div>
+															</div>
 														</div>
-														<div class="game-container_6b25a">
-															<div class="game-content_557e9">
-																<div class="casino-game-image_0e221">
-																	<img src={Raptor} alt="game" />
-																</div>
-																<div>
-																	<div class="game-title_41a8a">raptor</div>
-																	<div class="game-provider_58233">Falcon Gaming</div>
-																</div>
-															</div>
-															<svg
-																width="12"
-																height="10"
-																viewBox="0 0 12 10"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-																class="icon_d8f4c"
-															>
-																<path
-																	d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
-																	fill="currentColor"
-																></path>
-															</svg>
-														</div>
-													</div>
-												</div>
-												<div class="column_bb693">
-													<div class="column-title_5f3c2">Popular Providers</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 pragmatic_play_casino_61c8d"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Pragmatic Play</div>
-																<span class="item-count_b76d4"> 2 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 twain_sport_ce8ed"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Twain Sports</div>
-																<span class="item-count_b76d4"> 3 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 falcon_gaming_15a26"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Falcon Gaming</div>
-																<span class="item-count_b76d4"> 9 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 sport_games_tv_200ac"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">SportGamesTV</div>
-																<span class="item-count_b76d4"> 7 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 spribe_e83c1"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Spribe</div>
-																<span class="item-count_b76d4"> 7 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 betsolutions_ce304"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Betsolutions</div>
-																<span class="item-count_b76d4"> one </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 the_ear_three_cherry_95682"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Triple Cherry</div>
-																<span class="item-count_b76d4"> one </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 betsoft_games_33322"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Betsoft</div>
-																<span class="item-count_b76d4"> one </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 the_ear_gamzix_ba456"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">gamzix</div>
-																<span class="item-count_b76d4"> 3 </span>
-															</div>
-														</button>
-													</div>
-													<div>
-														<button class="provider_74d36">
-															<div class="icon-wrap_2c512">
-																<div class="item-icon_df852 lucky_streak_fugaso_3b806"></div>
-															</div>
-															<div class="item-right_1536e">
-																<div class="item-title_70b24">Fugaso</div>
-																<span class="item-count_b76d4"> one </span>
-															</div>
-														</button>
+														<svg
+															width="12"
+															height="10"
+															viewBox="0 0 12 10"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg"
+															class="icon_d8f4c"
+														>
+															<path
+																d="M11.8082 4.53297L7.47457 0.191932C7.35087 0.0680166 7.18599 0 7.01019 0C6.83419 0 6.66941 0.0681143 6.5457 0.191932L6.15224 0.586154C6.02863 0.709874 5.96054 0.875127 5.96054 1.05133C5.96054 1.22743 6.02863 1.39825 6.15224 1.52197L8.68042 4.05998H0.648287C0.286144 4.05998 0 4.34397 0 4.70683V5.26415C0 5.627 0.286144 5.93963 0.648287 5.93963H8.7091L6.15234 8.49181C6.02873 8.61573 5.96063 8.77648 5.96063 8.95268C5.96063 9.12868 6.02873 9.29179 6.15234 9.4156L6.5458 9.80856C6.66951 9.93247 6.83429 10 7.01028 10C7.18609 10 7.35096 9.93159 7.47467 9.80768L11.8083 5.46673C11.9323 5.34243 12.0005 5.17649 12 5.0001C12.0004 4.82312 11.9323 4.65708 11.8082 4.53297Z"
+																fill="currentColor"
+															></path>
+														</svg>
 													</div>
 												</div>
 											</div>
+											<div class="column_bb693">
+												<div class="column-title_5f3c2">Popular Providers</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 pragmatic_play_casino_61c8d"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Pragmatic Play</div>
+															<span class="item-count_b76d4"> 2 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 twain_sport_ce8ed"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Twain Sports</div>
+															<span class="item-count_b76d4"> 3 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 falcon_gaming_15a26"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Falcon Gaming</div>
+															<span class="item-count_b76d4"> 9 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 sport_games_tv_200ac"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">SportGamesTV</div>
+															<span class="item-count_b76d4"> 7 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 spribe_e83c1"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Spribe</div>
+															<span class="item-count_b76d4"> 7 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 betsolutions_ce304"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Betsolutions</div>
+															<span class="item-count_b76d4"> one </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 the_ear_three_cherry_95682"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Triple Cherry</div>
+															<span class="item-count_b76d4"> one </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 betsoft_games_33322"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Betsoft</div>
+															<span class="item-count_b76d4"> one </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 the_ear_gamzix_ba456"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">gamzix</div>
+															<span class="item-count_b76d4"> 3 </span>
+														</div>
+													</button>
+												</div>
+												<div>
+													<button class="provider_74d36">
+														<div class="icon-wrap_2c512">
+															<div class="item-icon_df852 lucky_streak_fugaso_3b806"></div>
+														</div>
+														<div class="item-right_1536e">
+															<div class="item-title_70b24">Fugaso</div>
+															<span class="item-count_b76d4"> one </span>
+														</div>
+													</button>
+												</div>
+											</div>
 										</div>
-									</a>
+									</div>
 								</li>
 								<li class="nav-menu-item_cc30f">
 									<a href="/game/aviator/play" id="AVIATOR" class="nav-menu-link_d5e39"
