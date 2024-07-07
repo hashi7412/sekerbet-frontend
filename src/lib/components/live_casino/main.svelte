@@ -39,12 +39,10 @@
 
 	const toggleProvidersModal = () => {
 		is_show_providers_modal = !is_show_providers_modal;
-		is_show_search_modal = false;
 	};
 
 	const toggleSearchModal = () => {
 		is_show_search_modal = !is_show_search_modal;
-		is_show_providers_modal = false;
 	};
 
 	let search_input_value = '';
@@ -2429,6 +2427,37 @@
 				</div>
 			</div>
 			<div class="games-container_1ed74">
+				<div class="games-header_11a0f">
+					<div class="df aic" style="display: flex; align-items: center;">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 20 20"
+							fill="none"
+							class="games-block-icon_05731"
+							><g clip-path="url(#clip0_301_12615)"
+								><path
+									d="M14.5937 3.27398C14.5151 3.03715 14.3063 2.86441 14.0555 2.82867L11.6679 2.48812L10.5998 0.364609C10.4878 0.141406 10.2561 0 10.0022 0C9.74825 0 9.51647 0.141406 9.40451 0.364609L8.33637 2.48816L5.94838 2.82871C5.6975 2.86449 5.48873 3.03719 5.4102 3.27402C5.33166 3.51086 5.39718 3.7709 5.57905 3.94469L7.30736 5.59758L6.89898 7.93133C6.85599 8.17688 6.95888 8.425 7.16419 8.57133C7.36994 8.71828 7.64207 8.73637 7.86645 8.62117L10.0023 7.51926L12.1378 8.62117C12.3673 8.73934 12.6384 8.71496 12.84 8.57133C13.0453 8.42504 13.1482 8.17691 13.1052 7.93156L12.6972 5.59758L14.4251 3.94469C14.6067 3.7709 14.6718 3.51082 14.5937 3.27398Z"
+									fill="currentColor"
+								></path><path
+									d="M12.6666 9.96814H7.3333C6.96511 9.96814 6.66663 10.2611 6.66663 10.6224V20H13.3333V10.6224C13.3333 10.2611 13.0348 9.96814 12.6666 9.96814Z"
+									fill="currentColor"
+								></path><path
+									d="M0.666673 12.5852C0.298488 12.5852 0 12.8781 0 13.2395V19.4828C0 19.7685 0.235997 20 0.527081 20H5.33335V12.5852H0.666673Z"
+									fill="currentColor"
+								></path><path
+									d="M19.3333 15.2021H14.6666V20H19.4729C19.764 20 20 19.7684 20 19.4827V15.8564C19.9999 15.4951 19.7014 15.2021 19.3333 15.2021Z"
+									fill="currentColor"
+								></path></g
+							></svg
+						>
+						<h2 class="games-title_37229">All providers Popular Games</h2>
+					</div>
+					<div class="games-amount_4d3c2">
+						<a href="/en/live_casino/tabs/casino_popular">See All <span>(19)</span></a>
+					</div>
+				</div>
 				<div class="games-rows_3393c">
 					<div class="slider_d1ae8">
 						<div class="game_2ca6b slide_4516b">
@@ -3377,10 +3406,11 @@
 		</div>
 	</div>
 	<div class="menu_98535">
-		<div style="flex-grow: 2; flex-basis: 0;">
+		<div class="item_7d6f0" bind:this={mobileProvidersDropdown}>
 			<button
 				aria-label="provider_filter"
-				class="item_7d6f0 button_0126b"
+				class="button_0126b button_6747d"
+				style=""
 				on:click={toggleProvidersModal}
 			>
 				<svg
@@ -3398,11 +3428,7 @@
 				</svg>
 				Provider
 			</button>
-			<div
-				class="providers-filter_44200"
-				style={is_show_providers_modal ? null : 'display: none;'}
-				bind:this={mobileProvidersDropdown}
-			>
+			<div class="providers-filter_44200" style={is_show_providers_modal ? null : 'display: none;'}>
 				<a href="/en/live_casino/" class="item_74988">
 					<div class=""><div class="item-icon_e1129 provider-icon_c6f47 all_46362"></div></div>
 					<div class="item-title_f8093">All</div>
@@ -3508,80 +3534,86 @@
 				</a>
 			</div>
 		</div>
-		<button aria-label="search_games" class="item_7d6f0 button_0126b" on:click={toggleSearchModal}>
-			<svg
-				width="16"
-				height="16"
-				viewBox="0 0 16 16"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-				class="icon_f3529"
+		<div class="item_7d6f0" bind:this={mobileOrderDropdown}>
+			<button
+				aria-label="search_games"
+				class="button_0126b button_6747d"
+				on:click={toggleSearchModal}
 			>
-				<g clip-path="url(#clip0_301_13052)">
-					<path
-						d="M15.7567 14.5735L11.8125 10.6129C12.8266 9.44901 13.3823 7.98455 13.3823 6.45999C13.3823 2.89801 10.3806 0 6.69113 0C3.0017 0 0 2.89801 0 6.45999C0 10.022 3.0017 12.92 6.69113 12.92C8.07619 12.92 9.39609 12.5167 10.5246 11.751L14.4988 15.7416C14.6649 15.9082 14.8883 16 15.1278 16C15.3544 16 15.5694 15.9166 15.7326 15.7649C16.0794 15.4428 16.0904 14.9085 15.7567 14.5735ZM6.69113 1.68522C9.4182 1.68522 11.6367 3.82713 11.6367 6.45999C11.6367 9.09286 9.4182 11.2348 6.69113 11.2348C3.96406 11.2348 1.74551 9.09286 1.74551 6.45999C1.74551 3.82713 3.96406 1.68522 6.69113 1.68522Z"
-						fill="#AEBBC2"
-					></path>
-				</g>
-				<defs>
-					<clippath id="clip0_301_13052">
-						<rect width="16" height="16" fill="white"></rect>
-					</clippath>
-				</defs>
-			</svg>
-			Search for game
-		</button>
-		<div
-			class="game-search_1654c"
-			style={is_show_search_modal ? null : 'display: none;'}
-			bind:this={mobileOrderDropdown}
-		>
-			<div class="title_a7416">Game Search</div>
-			<div class="description_9bdb1">Discover Great Games</div>
-			<div class="games-wrapper_3b4e0">
-				<div class="game_c4af6">
-					<img
-						class="game-image_7c3f5"
-						src="https://b3ti-cdn2-platform.cdn-in-flare.com/resources//media/games_images//pragmatic_play_casino/Live_Sweet_Bonanza_CandyLand_9447.webp"
-						alt="Live - Sweet Bonanza CandyLand"
-					/>
-					<div class="text_b190a">
-						<div class="name_ef0c5">Live - Sweet Bonanza CandyLand</div>
-						<div class="provider_31d81">Pragmatic Play</div>
-						<button aria-label="open games" class="button_030bd">Open</button>
+				<svg
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					class="icon_f3529"
+				>
+					<g clip-path="url(#clip0_301_13052)">
+						<path
+							d="M15.7567 14.5735L11.8125 10.6129C12.8266 9.44901 13.3823 7.98455 13.3823 6.45999C13.3823 2.89801 10.3806 0 6.69113 0C3.0017 0 0 2.89801 0 6.45999C0 10.022 3.0017 12.92 6.69113 12.92C8.07619 12.92 9.39609 12.5167 10.5246 11.751L14.4988 15.7416C14.6649 15.9082 14.8883 16 15.1278 16C15.3544 16 15.5694 15.9166 15.7326 15.7649C16.0794 15.4428 16.0904 14.9085 15.7567 14.5735ZM6.69113 1.68522C9.4182 1.68522 11.6367 3.82713 11.6367 6.45999C11.6367 9.09286 9.4182 11.2348 6.69113 11.2348C3.96406 11.2348 1.74551 9.09286 1.74551 6.45999C1.74551 3.82713 3.96406 1.68522 6.69113 1.68522Z"
+							fill="#AEBBC2"
+						></path>
+					</g>
+					<defs>
+						<clippath id="clip0_301_13052">
+							<rect width="16" height="16" fill="white"></rect>
+						</clippath>
+					</defs>
+				</svg>
+				Search for game
+			</button>
+			<div
+				class="game-search_1654c"
+				style={is_show_search_modal ? null : 'display: none;'}
+				bind:this={mobileOrderDropdown}
+			>
+				<div class="title_a7416">Game Search</div>
+				<div class="description_9bdb1">Discover Great Games</div>
+				<div class="games-wrapper_3b4e0">
+					<div class="game_c4af6">
+						<img
+							class="game-image_7c3f5"
+							src="https://b3ti-cdn2-platform.cdn-in-flare.com/resources//media/games_images//pragmatic_play_casino/Live_Sweet_Bonanza_CandyLand_9447.webp"
+							alt="Live - Sweet Bonanza CandyLand"
+						/>
+						<div class="text_b190a">
+							<div class="name_ef0c5">Live - Sweet Bonanza CandyLand</div>
+							<div class="provider_31d81">Pragmatic Play</div>
+							<button aria-label="open games" class="button_030bd">Open</button>
+						</div>
+					</div>
+					<div class="game_c4af6">
+						<img
+							class="game-image_7c3f5"
+							src="https://b3ti-cdn3-platform.cdn-in-flare.com/resources//media/games_images//Minesweeper-3831899fe568f771f2920190e4934498.jpg"
+							alt="Minesweeper"
+						/>
+						<div class="text_b190a">
+							<div class="name_ef0c5">Minesweeper</div>
+							<div class="provider_31d81">Bgaming Casino</div>
+							<button aria-label="open games" class="button_030bd">Open</button>
+						</div>
+					</div>
+					<div class="game_c4af6">
+						<img
+							class="game-image_7c3f5"
+							src="https://b3ti-cdn4-platform.cdn-in-flare.com/resources//media/games_images//bgaming_casino/Minesweeper_XY_11860.webp"
+							alt="Minesweeper XY"
+						/>
+						<div class="text_b190a">
+							<div class="name_ef0c5">Minesweeper XY</div>
+							<div class="provider_31d81">Bgaming Casino</div>
+							<button aria-label="open games" class="button_030bd">Open</button>
+						</div>
 					</div>
 				</div>
-				<div class="game_c4af6">
-					<img
-						class="game-image_7c3f5"
-						src="https://b3ti-cdn3-platform.cdn-in-flare.com/resources//media/games_images//Minesweeper-3831899fe568f771f2920190e4934498.jpg"
-						alt="Minesweeper"
-					/>
-					<div class="text_b190a">
-						<div class="name_ef0c5">Minesweeper</div>
-						<div class="provider_31d81">Bgaming Casino</div>
-						<button aria-label="open games" class="button_030bd">Open</button>
-					</div>
-				</div>
-				<div class="game_c4af6">
-					<img
-						class="game-image_7c3f5"
-						src="https://b3ti-cdn4-platform.cdn-in-flare.com/resources//media/games_images//bgaming_casino/Minesweeper_XY_11860.webp"
-						alt="Minesweeper XY"
-					/>
-					<div class="text_b190a">
-						<div class="name_ef0c5">Minesweeper XY</div>
-						<div class="provider_31d81">Bgaming Casino</div>
-						<button aria-label="open games" class="button_030bd">Open</button>
-					</div>
-				</div>
+				<input
+					on:change={onSearchInputChange}
+					class="input_02cdd"
+					type="text"
+					placeholder="Oyun Ara"
+				/>
 			</div>
-			<input
-				on:change={onSearchInputChange}
-				class="input_02cdd"
-				type="text"
-				placeholder="Oyun Ara"
-			/>
 		</div>
 		<div class="center-block_5ed43">
 			<!-- svelte-ignore a11y-missing-attribute -->

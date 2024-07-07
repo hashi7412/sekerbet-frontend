@@ -39414,7 +39414,6 @@ list-container:last-child .list-header_320a4 {
 	display: block;
 }
 .item_7d6f0 {
-	position: relative;
 	display: flex;
 	align-items: center;
 	flex-grow: 2;
@@ -39422,7 +39421,7 @@ list-container:last-child .list-header_320a4 {
 	flex-direction: column;
 	justify-content: start;
 	height: 100%;
-	padding: 16px 4px 0;
+	padding: 14px 4px 0;
 	font-weight: 600;
 	font-size: 10px;
 	line-height: 14px;
@@ -39433,6 +39432,16 @@ list-container:last-child .list-header_320a4 {
 }
 .item_7d6f0.button_0126b {
 	position: unset;
+}
+.button_6747d {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	line-height: 14px;
+	text-align: center;
+	color: #e8eced;
+	text-transform: uppercase;
+	word-break: break-word;
 }
 .item_7d6f0.active_7a520 {
 	color: #fff;
@@ -39734,7 +39743,7 @@ list-container:last-child .list-header_320a4 {
 	margin-bottom: auto;
 	width: 100%;
 }
-.auth-block_06075 .auth-button_e29e2{
+.auth-block_06075 .auth-button_e29e2 {
 	flex: 1;
 }
 .auth-button_e29e2 {
