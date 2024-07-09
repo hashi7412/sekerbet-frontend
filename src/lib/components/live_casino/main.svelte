@@ -3560,7 +3560,7 @@
 						</clippath>
 					</defs>
 				</svg>
-				Search for game
+				Search
 			</button>
 			<div
 				class="game-search_1654c"
@@ -3665,7 +3665,7 @@
 					fill="#FEF5D7"
 				></path>
 			</svg>
-			Tournaments
+			Tourney
 		</a>
 		<a href="/" class="item_7d6f0">
 			<svg

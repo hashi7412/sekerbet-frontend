@@ -21051,7 +21051,8 @@ div.vip-club-page_f6693 .vote-info-wrapper_0f032 {
 }
 .games_2831d {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+	/* grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); */
+	grid-template-columns: repeat(6, 1fr);
 	justify-content: space-between;
 	grid-gap: 20px;
 }
@@ -21127,8 +21128,7 @@ div.vip-club-page_f6693 .vote-info-wrapper_0f032 {
 }
 .game_4fadc {
 	width: 100%;
-	max-width: 220px;
-	height: 284px;
+	padding-top: 130%;
 	position: relative;
 	overflow: hidden;
 	border-radius: 8px;
@@ -21218,6 +21218,9 @@ div.vip-club-page_f6693 .vote-info-wrapper_0f032 {
 	transform: scale(1.1);
 }
 .game_4fadc .game-image_1653c {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -29739,7 +29742,7 @@ div.vip-club-page_f6693 .vote-info-wrapper_0f032 {
 	column-gap: 4px;
 	padding: 0 10px;
 	font-weight: 500;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 20px;
 	color: #354046;
 	white-space: nowrap;
@@ -29839,12 +29842,6 @@ div.vip-club-page_f6693 .vote-info-wrapper_0f032 {
 	}
 	.nav-menu-item_b5ccf {
 		padding: 0 10px;
-	}
-	/* .site-logo_492f1 {
-		width: 150px;
-	} */
-	.control-header-link_bd5ce {
-		padding: 10px;
 	}
 	.control-header-link_bd5ce svg {
 		width: 15px;

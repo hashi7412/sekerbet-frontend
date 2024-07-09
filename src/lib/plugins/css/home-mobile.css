@@ -39469,7 +39469,7 @@ list-container:last-child .list-header_320a4 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: calc(100% - 20px);
+	width: calc(100% - 30px);
 	background: #121517;
 	border-radius: 8px;
 	border: 2px solid transparent;
