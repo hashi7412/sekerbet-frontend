@@ -10,7 +10,7 @@
 	import RedStarImg from '$lib/images/brand/116_7c0485cee9ccb44896c94e535cf63db9.png';
 	import BasketballImg from '$lib/images/brand/325_55d988415f6be41a58db71a5a06c79de.png';
 	import BigCupImg from '$lib/images/brand/1333228_1015b938bbde0d4d3fd188feee869392.png';
-
+	import Banner from '$lib/components/_utils/Banner.svelte';
 	let soccer_accordian_1 = true;
 	let soccer_accordian_2 = true;
 	let soccer_accordian_3 = true;
@@ -23,6 +23,7 @@
 </script>
 
 <div class="main-content-wrapper_d5326 home-desktop">
+	<Banner ></Banner>
 	<div>
 		<div class="slider-container_2f39a">
 			<div>

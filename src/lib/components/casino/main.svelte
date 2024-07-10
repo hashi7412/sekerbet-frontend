@@ -1,7 +1,7 @@
 <script>
 	import BetineAvatarDefault from '$lib/images/betine-avatar-default.png';
 	import ButterflyLovers from '$lib/images/games/Butterfly_Lovers.webp';
-
+	import Banner from '$lib/components/_utils/Banner.svelte';
 	import Coins from '$lib/images/mobile/casino/36_Coins_11971.webp';
 
 	let is_show_providers_modal = false;
@@ -19,6 +19,7 @@
 </script>
 
 <div class="main-content-wrapper_d5326 home-desktop">
+	<Banner></Banner>
 	<div>
 		<div class="casino-slider_e04f9 main-slider_9a25c">
 			<div class="slick-wrapper_061f7">

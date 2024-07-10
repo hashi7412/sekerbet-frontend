@@ -1,11 +1,12 @@
 <script>
 	import BetineAvatarDefault from '$lib/images/betine-avatar-default.png';
 	import Darts from '$lib/images/other_games/Darts_10972.png';
-
+	import Banner from '$lib/components/_utils/Banner.svelte';
 	import Boxing from '$lib/images/mobile/other_games/Boxing_10983.png';
 </script>
 
 <div class="main-content-wrapper_d5326 home-desktop">
+	<Banner ></Banner>
 	<div class="pl0 pr0 container_ac2c7 large_6e58f" style="padding-left: 0px; padding-right: 0px;">
 		<div>
 			<div class="other-games-slider_5380e main-slider_9a25c">
@@ -545,6 +546,7 @@
 						</div>
 						<div class="games-amount_15ee1">See All (6)</div>
 					</div>
+
 					<div class="games-rows_050c2">
 						<div class="games_40233">
 							<div class="game_a7ab0">
@@ -732,8 +734,6 @@
 									class="game-image_888dd"
 								/>
 							</div>
-						</div>
-						<div class="games_40233">
 							<div class="game_a7ab0">
 								<div class="game-info_9387e">
 									<div class="favorite-btn-wrap_d7c44">
@@ -919,8 +919,6 @@
 									class="game-image_888dd"
 								/>
 							</div>
-						</div>
-						<div class="games_40233">
 							<div class="game_a7ab0">
 								<div class="game-info_9387e">
 									<div class="favorite-btn-wrap_d7c44">
@@ -1106,8 +1104,6 @@
 									class="game-image_888dd"
 								/>
 							</div>
-						</div>
-						<div class="games_40233">
 							<div class="game_a7ab0">
 								<div class="game-info_9387e">
 									<div class="favorite-btn-wrap_d7c44">
@@ -1293,8 +1289,6 @@
 									class="game-image_888dd"
 								/>
 							</div>
-						</div>
-						<div class="games_40233">
 							<div class="game_a7ab0">
 								<div class="game-info_9387e">
 									<div class="favorite-btn-wrap_d7c44">
@@ -1480,8 +1474,6 @@
 									class="game-image_888dd"
 								/>
 							</div>
-						</div>
-						<div class="games_40233">
 							<div class="game_a7ab0">
 								<div class="game-info_9387e">
 									<div class="favorite-btn-wrap_d7c44">
@@ -1668,6 +1660,7 @@
 								/>
 							</div>
 						</div>
+
 						<div class="btn-wrapper_e2226">
 							<button type="button" class="btn_42c9e">Show more</button>
 						</div>

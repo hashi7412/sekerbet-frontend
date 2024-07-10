@@ -1,4 +1,5 @@
 <script>
+	import Banner from '$lib/components/_utils/Banner.svelte';
 	import Bet_on_Teen_Patti from '$lib/images/girls/Bet_on_Teen_Patti_9082.webp';
 	import Crazy_Time from '$lib/images/girls/Crazy_Time_8841.webp';
 	import Dream_Catcher from '$lib/images/girls/Dream_Catcher_8848.webp';
@@ -56,6 +57,7 @@
 </script>
 
 <div class="home-desktop">
+	<Banner></Banner>
 	<div class="top-winners_653ab">
 		<div class="slider-wrapper_9d522">
 			<div class="slick-slider slick-initialized" dir="ltr">

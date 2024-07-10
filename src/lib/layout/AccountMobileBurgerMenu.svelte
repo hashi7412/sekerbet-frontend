@@ -516,7 +516,7 @@
 					<span class="main-nav-text_ccf8a">Zeppelin</span>
 				</a>
 			</li>
-			<li class="main-nav-item_a766e">
+			<!-- <li class="main-nav-item_a766e">
 				<a href="/game/live_spaceman/play" id="SPACEMAN" class="main-nav-link_0f47e">
 					<div class="main-nav-icon-container_51413">
 						<svg
@@ -556,7 +556,7 @@
 					</div>
 					<span class="main-nav-text_ccf8a">Spaceman</span>
 				</a>
-			</li>
+			</li> -->
 			<li class="main-nav-item_a766e">
 				<a href="/promo" id="PROMOTIONS" class="main-nav-link_0f47e">
 					<div class="main-nav-icon-container_51413">
