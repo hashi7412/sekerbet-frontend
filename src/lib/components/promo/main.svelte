@@ -1,18 +1,28 @@
 <script>
 	// @ts-nocheck
-
 	import background from '$lib/images/promo/1680270831_tr_TR_bonus2.png';
 	import bonus from '$lib/images/promo/1715241074bonus-663c805b73015.webp';
-
+	import Banner from '$lib/components/_utils/Banner.svelte';
 	let is_show_modal = false;
 
 	const handleDropdownFocusLoss = ({ relatedTarget, currentTarget }) => {
 		if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
 		isDropdown = false;
 	};
+
+	const handleModalClick = (event) => {
+		if (event.target.classList.contains('modal-wrapper_b2d0e')) {
+			is_show_modal = false;
+		}
+	};
 </script>
 
-<div class="modal-wrapper_b2d0e" style={is_show_modal ? 'display: block' : 'display: none'}>
+
+	   <!-- svelte-ignore a11y-click-events-have-key-events -->
+	<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div   class="modal-wrapper_b2d0e" style={is_show_modal ? 'display: block' : 'display: none'} on:click={handleModalClick}>
+
+
 	<div class="modal-container_69103 modal_3cd70">
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -141,9 +151,10 @@
 			>
 		</div>
 	</div>
-</div>
+  </div>
 
 <div class="main-content-wrapper_d5326 home-desktop">
+	<Banner></Banner>
 	<div>
 		<div class="main-slider_0d383">
 			<div class="slick-wrapper_ba420">
@@ -161,12 +172,12 @@
 								style="outline: none; width: 1911px;"
 							>
 								<div>
-									<a class="swiper-slide" href="/">
+									<!-- <a class="swiper-slide" href="/">
 										<img
 											src={background}
 											alt="https://b3ti-cdn1-platform.cdn-in-flare.com/resources/sliders/desk_promo/1680270831_tr_TR_bonus2.png"
 										/>
-									</a>
+									</a> -->
 								</div>
 							</div>
 						</div>

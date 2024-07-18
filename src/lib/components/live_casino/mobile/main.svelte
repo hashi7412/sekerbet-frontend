@@ -1,0 +1,360 @@
+<script>
+	// @ts-nocheck
+
+	import Banner from '$lib/components/_utils/Banner.svelte';
+
+	import LiveCasinoMobile from './LiveCasinoMobile.svelte';
+
+	let is_dropdown_providers = false;
+	let is_dropdown_order = false;
+
+	let providersDropdown;
+	let mobileProvidersDropdown;
+	let orderDropdown;
+	let mobileOrderDropdown;
+
+	const handleProvidersDropdownFocusLoss = ({ relatedTarget, currentTarget }) => {
+		console.log(relatedTarget, currentTarget);
+		if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
+		is_dropdown_providers = false;
+	};
+
+	const handleOrderDropdownFocusLoss = ({ relatedTarget, currentTarget }) => {
+		if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
+		is_dropdown_order = false;
+	};
+
+	const filterProviders = () => {
+		is_dropdown_providers = false;
+	};
+
+	const order = () => {
+		is_dropdown_order = false;
+	};
+
+	let is_show_providers_modal = false;
+	let is_show_search_modal = false;
+
+	const toggleProvidersModal = () => {
+		is_show_providers_modal = !is_show_providers_modal;
+	};
+
+	const toggleSearchModal = () => {
+		is_show_search_modal = !is_show_search_modal;
+	};
+
+	let search_input_value = '';
+
+	const onSearchInputChange = (e) => {
+		search_input_value = e.target.value;
+	};
+
+	function handleOutsideClick(event) {
+		const target = event.target;
+
+		if (is_dropdown_providers && !providersDropdown.contains(target)) {
+			is_dropdown_providers = false;
+		} else if (is_dropdown_order && !orderDropdown.contains(target)) {
+			is_dropdown_order = false;
+		} else if (is_show_providers_modal && !mobileProvidersDropdown.contains(target)) {
+			is_show_providers_modal = false;
+		} else if (is_show_search_modal & !mobileOrderDropdown.contains(target)) {
+			is_show_search_modal = false;
+		}
+	}
+</script>
+
+<div class="main-content-wrapper_a4af2 home-mobile">
+	<LiveCasinoMobile></LiveCasinoMobile>
+
+	<div class="menu_98535">
+		<div class="item_7d6f0" bind:this={mobileProvidersDropdown}>
+			<button
+				aria-label="provider_filter"
+				class="button_0126b button_6747d"
+				style=""
+				on:click={toggleProvidersModal}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					class="icon_f3529"
+				>
+					<circle cx="3" cy="3" r="3" fill="#FEF5D7"></circle>
+					<circle cx="3" cy="13" r="3" fill="#FEF5D7"></circle>
+					<circle cx="13" cy="3" r="3" fill="#39D087"></circle>
+					<circle cx="13" cy="13" r="3" fill="#FEF5D7"></circle>
+				</svg>
+				Provider
+			</button>
+			<div class="providers-filter_44200" style={is_show_providers_modal ? null : 'display: none;'}>
+				<a href="/en/live_casino/" class="item_74988">
+					<div class=""><div class="item-icon_e1129 provider-icon_c6f47 all_46362"></div></div>
+					<div class="item-title_f8093">All</div>
+					<span class="count_5355f">456</span>
+				</a>
+				<a href="/en/live_casino/ezugi_evolution/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 ezugi_evolution_72512"></div>
+					</div>
+					<div class="item-title_f8093">Evolution</div>
+					<span class="count_5355f">100</span>
+				</a>
+				<a href="/en/live_casino/pragmatic_play_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 pragmatic_play_casino_31da3"></div>
+					</div>
+					<div class="item-title_f8093">Pragmatic Play</div>
+					<span class="count_5355f">111</span>
+				</a>
+				<a href="/en/live_casino/ezugi/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 ezugi_39183"></div>
+					</div>
+					<div class="item-title_f8093">Ezugi</div>
+					<span class="count_5355f">30</span></a
+				>
+				<a href="/en/live_casino/bgaming_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 bgaming_casino_d9483"></div>
+					</div>
+					<div class="item-title_f8093">Bgaming Casino</div>
+					<span class="count_5355f">21</span>
+				</a>
+				<a href="/en/live_casino/onetouch_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 onetouch_casino_4fb21"></div>
+					</div>
+					<div class="item-title_f8093">OneTouch Casino</div>
+					<span class="count_5355f">48</span>
+				</a>
+				<a href="/en/live_casino/evoplay_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 evoplay_casino_19280"></div>
+					</div>
+					<div class="item-title_f8093">Evoplay Casino</div>
+					<span class="count_5355f">11</span>
+				</a>
+				<a href="/en/live_casino/playtech_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 playtech_casino_82a15"></div>
+					</div>
+					<div class="item-title_f8093">Playtech Casino</div>
+					<span class="count_5355f">41</span>
+				</a>
+				<a href="/en/live_casino/egt_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 egt_casino_f8aa1"></div>
+					</div>
+					<div class="item-title_f8093">Amusnet (EGT)</div>
+					<span class="count_5355f">7</span>
+				</a>
+				<a href="/en/live_casino/lucky_streak/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 lucky_streak_f8acf"></div>
+					</div>
+					<div class="item-title_f8093">Lucky Streak</div>
+					<span class="count_5355f">15</span>
+				</a>
+				<a href="/en/live_casino/vivo_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 vivo_casino_1c5cf"></div>
+					</div>
+					<div class="item-title_f8093">Vivo</div>
+					<span class="count_5355f">21</span>
+				</a>
+				<a href="/en/live_casino/alg_net/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 alg_net_2ae3b"></div>
+					</div>
+					<div class="item-title_f8093">Absolute Gaming</div>
+					<span class="count_5355f">15</span>
+				</a>
+				<a href="/en/live_casino/the_ear_liveg24/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 the_ear_liveg24_da339"></div>
+					</div>
+					<div class="item-title_f8093">Liveg24</div>
+					<span class="count_5355f">8</span>
+				</a>
+				<a href="/en/live_casino/smartsoft_casino/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 smartsoft_casino_a7857"></div>
+					</div>
+					<div class="item-title_f8093">Smartsoft Casino</div>
+					<span class="count_5355f">18</span>
+				</a>
+				<a href="/en/live_casino/betgames/" class="item_74988">
+					<div class="">
+						<div class="item-icon_e1129 provider-icon_c6f47 betgames_7192b"></div>
+					</div>
+					<div class="item-title_f8093">Bet Games</div>
+					<span class="count_5355f">10</span>
+				</a>
+			</div>
+		</div>
+		<div class="item_7d6f0" bind:this={mobileOrderDropdown}>
+			<button
+				aria-label="search_games"
+				class="button_0126b button_6747d"
+				on:click={toggleSearchModal}
+			>
+				<svg
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					class="icon_f3529"
+				>
+					<g clip-path="url(#clip0_301_13052)">
+						<path
+							d="M15.7567 14.5735L11.8125 10.6129C12.8266 9.44901 13.3823 7.98455 13.3823 6.45999C13.3823 2.89801 10.3806 0 6.69113 0C3.0017 0 0 2.89801 0 6.45999C0 10.022 3.0017 12.92 6.69113 12.92C8.07619 12.92 9.39609 12.5167 10.5246 11.751L14.4988 15.7416C14.6649 15.9082 14.8883 16 15.1278 16C15.3544 16 15.5694 15.9166 15.7326 15.7649C16.0794 15.4428 16.0904 14.9085 15.7567 14.5735ZM6.69113 1.68522C9.4182 1.68522 11.6367 3.82713 11.6367 6.45999C11.6367 9.09286 9.4182 11.2348 6.69113 11.2348C3.96406 11.2348 1.74551 9.09286 1.74551 6.45999C1.74551 3.82713 3.96406 1.68522 6.69113 1.68522Z"
+							fill="#AEBBC2"
+						></path>
+					</g>
+					<defs>
+						<clippath id="clip0_301_13052">
+							<rect width="16" height="16" fill="white"></rect>
+						</clippath>
+					</defs>
+				</svg>
+				Search
+			</button>
+			<div
+				class="game-search_1654c"
+				style={is_show_search_modal ? null : 'display: none;'}
+				bind:this={mobileOrderDropdown}
+			>
+				<div class="title_a7416">Game Search</div>
+				<div class="description_9bdb1">Discover Great Games</div>
+				<div class="games-wrapper_3b4e0">
+					<div class="game_c4af6">
+						<img
+							class="game-image_7c3f5"
+							src="https://b3ti-cdn2-platform.cdn-in-flare.com/resources//media/games_images//pragmatic_play_casino/Live_Sweet_Bonanza_CandyLand_9447.webp"
+							alt="Live - Sweet Bonanza CandyLand"
+						/>
+						<div class="text_b190a">
+							<div class="name_ef0c5">Live - Sweet Bonanza CandyLand</div>
+							<div class="provider_31d81">Pragmatic Play</div>
+							<button aria-label="open games" class="button_030bd">Open</button>
+						</div>
+					</div>
+					<div class="game_c4af6">
+						<img
+							class="game-image_7c3f5"
+							src="https://b3ti-cdn3-platform.cdn-in-flare.com/resources//media/games_images//Minesweeper-3831899fe568f771f2920190e4934498.jpg"
+							alt="Minesweeper"
+						/>
+						<div class="text_b190a">
+							<div class="name_ef0c5">Minesweeper</div>
+							<div class="provider_31d81">Bgaming Casino</div>
+							<button aria-label="open games" class="button_030bd">Open</button>
+						</div>
+					</div>
+					<div class="game_c4af6">
+						<img
+							class="game-image_7c3f5"
+							src="https://b3ti-cdn4-platform.cdn-in-flare.com/resources//media/games_images//bgaming_casino/Minesweeper_XY_11860.webp"
+							alt="Minesweeper XY"
+						/>
+						<div class="text_b190a">
+							<div class="name_ef0c5">Minesweeper XY</div>
+							<div class="provider_31d81">Bgaming Casino</div>
+							<button aria-label="open games" class="button_030bd">Open</button>
+						</div>
+					</div>
+				</div>
+				<input
+					on:change={onSearchInputChange}
+					class="input_02cdd"
+					type="text"
+					placeholder="Oyun Ara"
+				/>
+			</div>
+		</div>
+		<div class="center-block_5ed43">
+			<!-- svelte-ignore a11y-missing-attribute -->
+			<a class="center-item_6bb32 favourites_10e71">
+				<span class="num_ef955 favourites_10e71">0</span>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="20"
+					height="18"
+					viewBox="0 0 20 18"
+					fill="none"
+					class="icon_f3529 favourites_10e71"
+				>
+					<path
+						d="M6.05781 0.00126411C4.31189 -0.03509 2.61745 0.725131 1.51057 2.02201C-0.536608 4.42311 -0.659596 8.41587 2.11409 11.1298C2.1288 11.1444 2.14452 11.1583 2.1605 11.1724L9.46292 17.3058C9.77204 17.5647 10.229 17.5647 10.5379 17.3058L17.8416 11.1724C17.8575 11.1583 17.872 11.1444 17.8867 11.1298C20.6604 8.41562 20.5359 4.42311 18.4889 2.02201C17.3836 0.724884 15.6876 -0.0353373 13.9427 0.00126411C12.4953 0.0304463 11.0993 0.814903 10.0003 2.09917C8.90149 0.814903 7.50552 0.0304463 6.05781 0.00126411Z"
+						fill="#39D087"
+					></path>
+				</svg>
+				Favorites
+			</a>
+		</div>
+		<a href="/" class="item_7d6f0">
+			<svg
+				width="16"
+				height="16"
+				viewBox="0 0 16 16"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				class="icon_f3529"
+			>
+				<path
+					d="M12.1263 1H3.8732C3.6978 1 3.61149 1.217 3.73767 1.34098L7.86407 5.39428C7.9397 5.46853 8.05954 5.46853 8.13514 5.39428L12.2618 1.34094C12.388 1.21703 12.3017 1 12.1263 1Z"
+					fill="#FEF5D7"
+				></path>
+				<path
+					d="M6.20477 5.41871L2.57459 1.85282C2.48594 1.76577 2.34112 1.78305 2.27472 1.88857L0.0310643 5.45443C-0.051998 5.58644 0.0412518 5.75963 0.195408 5.75963H6.06921C6.24459 5.75966 6.3309 5.54263 6.20477 5.41871Z"
+					fill="#FEF5D7"
+				></path>
+				<path
+					d="M15.9682 5.4546L13.7246 1.88871C13.6582 1.78316 13.5134 1.76591 13.4247 1.85293L9.79429 5.41882C9.66816 5.54273 9.75441 5.7598 9.92982 5.7598H15.8039C15.9581 5.75977 16.0513 5.58661 15.9682 5.4546Z"
+					fill="#FEF5D7"
+				></path>
+				<path
+					d="M7.2197 6.94971H0.343899C0.174337 6.94971 0.0854929 7.15451 0.199868 7.28179L7.0757 14.9347C7.1958 15.0684 7.41483 14.982 7.41483 14.8009V7.14803C7.41476 7.03851 7.32745 6.94971 7.2197 6.94971Z"
+					fill="#FEF5D7"
+				></path>
+				<path
+					d="M15.6571 6.94971H8.781C8.67328 6.94971 8.58594 7.03848 8.58594 7.14803V14.8012C8.58594 14.9823 8.80494 15.0687 8.92506 14.935L15.8011 7.28179C15.9155 7.15448 15.8267 6.94971 15.6571 6.94971Z"
+					fill="#FEF5D7"
+				></path>
+			</svg>
+			Tourney
+		</a>
+		<a href="/" class="item_7d6f0">
+			<svg
+				width="16"
+				height="15"
+				viewBox="0 0 16 15"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				class="icon_f3529"
+			>
+				<g clip-path="url(#clip0_4_7498)">
+					<path
+						d="M15.7313 6.39764L8.5526 0.20392C8.2375 -0.0679831 7.76235 -0.0679535 7.44738 0.20389L0.268688 6.39767C0.0162826 6.61546 -0.0670922 6.95101 0.0562199 7.2525C0.179563 7.55399 0.479875 7.74878 0.821342 7.74878H1.9679V13.9544C1.9679 14.2005 2.17859 14.4 2.43843 14.4H6.37323C6.63307 14.4 6.84376 14.2005 6.84376 13.9544V10.1866H9.15631V13.9545C9.15631 14.2005 9.367 14.4 9.62684 14.4H13.5615C13.8213 14.4 14.032 14.2005 14.032 13.9545V7.74878H15.1788C15.5202 7.74878 15.8205 7.55396 15.9439 7.2525C16.067 6.95098 15.9837 6.61546 15.7313 6.39764Z"
+						fill="#FEF5D7"
+					></path>
+					<path
+						d="M13.9091 0.889343H10.7491L14.3796 4.01512V1.33485C14.3796 1.08881 14.169 0.889343 13.9091 0.889343Z"
+						fill="#FBCF44"
+					></path>
+				</g>
+				<defs>
+					<clippath id="clip0_4_7498">
+						<rect width="16" height="14.4" fill="white"></rect>
+					</clippath>
+				</defs>
+			</svg>
+			Home page
+		</a>
+	</div>
+</div>

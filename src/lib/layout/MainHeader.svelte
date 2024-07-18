@@ -2023,7 +2023,7 @@
 										</div>
 									</a>
 								</li>
-								<li class="nav-menu-item_cc30f">
+								<!-- <li class="nav-menu-item_cc30f">
 									<a href="/poker" id="POKER" class="nav-menu-link_d5e39"
 										><span class="nav-menu-link-icon_8393e"
 											><svg
@@ -2047,7 +2047,7 @@
 											</svg></span
 										><span class="nav-menu-link-title_42160">Poker</span></a
 									>
-								</li>
+								</li> -->
 								<li
 									class={currentUrl === '/other_games'
 										? 'nav-menu-item_cc30f active_90a45'
@@ -2398,7 +2398,7 @@
 										</div>
 									</div>
 								</li>
-								<li class="nav-menu-item_cc30f">
+								<!-- <li class="nav-menu-item_cc30f">
 									<a href="/game/aviator/play" id="AVIATOR" class="nav-menu-link_d5e39"
 										><span class="nav-menu-link-icon_8393e"
 											><svg
@@ -2438,8 +2438,8 @@
 											</svg></span
 										><span class="nav-menu-link-title_42160">Aviator</span></a
 									>
-								</li>
-								<li class="nav-menu-item_cc30f">
+								</li> -->
+								<!-- <li class="nav-menu-item_cc30f">
 									<a href="/zeppelin" id="ZEPPELIN" class="nav-menu-link_d5e39"
 										><span class="nav-menu-link-icon_8393e"
 											><svg
@@ -2483,8 +2483,8 @@
 											</svg></span
 										><span class="nav-menu-link-title_42160">Zeppelin</span></a
 									>
-								</li>
-								<li class="nav-menu-item_cc30f">
+								</li> -->
+								<!-- <li class="nav-menu-item_cc30f">
 									<a href="/game/live_spaceman/play" id="SPACEMAN" class="nav-menu-link_d5e39"
 										><span class="nav-menu-link-icon_8393e"
 											><svg
@@ -2528,7 +2528,7 @@
 											</svg></span
 										><span class="nav-menu-link-title_42160">Spaceman</span></a
 									>
-								</li>
+								</li> -->
 								<li
 									class={currentUrl === '/promo'
 										? 'nav-menu-item_cc30f active_90a45'

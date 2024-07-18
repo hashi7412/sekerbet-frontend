@@ -1,5 +1,6 @@
 <script>
-	import Main from '$lib/components/promo/main.svelte';
+	// import Main from '$lib/components/promo/main.txt';
+	import Main from '$lib/components/promo/main.svelte'
 </script>
 
 <svelte:head>
