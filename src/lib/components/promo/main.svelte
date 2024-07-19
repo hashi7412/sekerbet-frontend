@@ -17,12 +17,13 @@
 	};
 </script>
 
-
-	   <!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
-<div   class="modal-wrapper_b2d0e" style={is_show_modal ? 'display: block' : 'display: none'} on:click={handleModalClick}>
-
-
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div
+	class="modal-wrapper_b2d0e"
+	style={is_show_modal ? 'display: block' : 'display: none'}
+	on:click={handleModalClick}
+>
 	<div class="modal-container_69103 modal_3cd70">
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -151,7 +152,7 @@
 			>
 		</div>
 	</div>
-  </div>
+</div>
 
 <div class="main-content-wrapper_d5326 home-desktop">
 	<Banner></Banner>
